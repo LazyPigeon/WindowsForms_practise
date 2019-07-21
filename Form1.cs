@@ -495,5 +495,93 @@ namespace WindowsForms_practise
 
             
         }
+
+        private void BSelectMovies_Click(object sender, EventArgs e)
+        {
+            string movies = "";
+
+            if (cbComedy.Checked)
+            {
+                if (movies == "")
+                    movies = cbComedy.Text + "\n";
+                else
+                    //movies = movies + ", " + cbComedy.Text;
+                    movies = movies + cbComedy.Text + Environment.NewLine;
+            }
+            if (cbAction.Checked)
+            {
+                if (movies == "")
+                    movies = cbAction.Text + Environment.NewLine;
+                else
+                    //movies = movies + ", " + cbAction.Text;
+                    movies = movies + cbAction.Text + "\n";
+            }
+            if (cbScienceFiction.Checked)
+            {
+                if (movies == "")
+                    movies = cbScienceFiction.Text + "\n";
+                else
+                    //movies = movies + ", " + cbScienceFiction.Text;
+                    movies = movies + cbScienceFiction.Text + "\n";
+            }
+            if (cbRomance.Checked)
+            {
+                if (movies == "")
+                    movies = cbRomance.Text + Environment.NewLine;
+                else
+                    //movies = movies + ", " + cbRomance.Text;
+                    movies = movies + cbRomance.Text + Environment.NewLine;
+            }
+            if (cbAnimation.Checked)
+            {
+                if (movies == "")
+                    movies = cbAnimation.Text + "\n";
+                else
+                    //movies = movies + ", " + cbAnimation.Text;
+                    movies = movies + cbAnimation.Text + "\n";
+            }
+
+            if (movies == "")
+                MessageBox.Show("I don't have any favorite movie", "Favorite Movies");
+            else
+                MessageBox.Show("Types of movies you like:\n" + movies, "Favorite Movies");
+        }
+
+        private void BFavoriteMovie_Click(object sender, EventArgs e)
+        {
+            string movie = "";
+
+            if (rbComedy.Checked)
+                movie = rbComedy.Text;
+            else if (rbAction.Checked)
+                movie = rbAction.Text;
+            else if (rbScienceFiction.Checked)
+                movie = rbScienceFiction.Text;
+            else if (rbRomance.Checked)
+                movie = rbRomance.Text;
+            else if (rbAnimation.Checked)
+                movie = rbAnimation.Text;
+
+            if (movie == "")
+                MessageBox.Show("I don't have any favorite movie", "Favorite Movie");
+            else
+                MessageBox.Show("Your Favorite type of movie is " + movie, "Favorite Movie");
+        }
+
+        private void BtnDebug_Click(object sender, EventArgs e)
+        {
+            int lettercount = 0;
+            string text = "Debugging";
+            string letter;
+            for (int i = 0; i < text.Length; i++)
+            {
+                letter = text.Substring(i,1);
+                if (letter == "g")
+                {
+                    lettercount++;
+                }
+            }
+            tbDebug.Text = "g count is " + lettercount.ToString();
+        }
     }
 }
