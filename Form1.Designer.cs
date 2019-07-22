@@ -30,6 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.PLAYGROUND = new System.Windows.Forms.TabPage();
+            this.btnDebug = new System.Windows.Forms.Button();
+            this.lsum = new System.Windows.Forms.Label();
+            this.tbLimit = new System.Windows.Forms.TextBox();
+            this.btnLoop = new System.Windows.Forms.Button();
             this.btnAnswer = new System.Windows.Forms.Button();
             this.btnMixed = new System.Windows.Forms.Button();
             this.btnSubtract = new System.Windows.Forms.Button();
@@ -50,6 +54,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.EXCEL_TAB = new System.Windows.Forms.TabPage();
             this.Calculator = new System.Windows.Forms.TabPage();
+            this.btnDivision = new System.Windows.Forms.Button();
+            this.btnMultiplication = new System.Windows.Forms.Button();
+            this.btnSubtraction = new System.Windows.Forms.Button();
             this.btnEquals = new System.Windows.Forms.Button();
             this.btnAddition = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -65,6 +72,29 @@
             this.btnTwo = new System.Windows.Forms.Button();
             this.btnOne = new System.Windows.Forms.Button();
             this.txtDisplay = new System.Windows.Forms.TextBox();
+            this.tabTimes = new System.Windows.Forms.TabPage();
+            this.bFavoriteMovie = new System.Windows.Forms.Button();
+            this.bSelectMovies = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbAnimation = new System.Windows.Forms.RadioButton();
+            this.rbRomance = new System.Windows.Forms.RadioButton();
+            this.rbScienceFiction = new System.Windows.Forms.RadioButton();
+            this.rbAction = new System.Windows.Forms.RadioButton();
+            this.rbComedy = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbAnimation = new System.Windows.Forms.CheckBox();
+            this.cbRomance = new System.Windows.Forms.CheckBox();
+            this.cbScienceFiction = new System.Windows.Forms.CheckBox();
+            this.cbAction = new System.Windows.Forms.CheckBox();
+            this.cbComedy = new System.Windows.Forms.CheckBox();
+            this.lmultiplyby = new System.Windows.Forms.Label();
+            this.tbMultiplyBy = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btForLoop = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbLoopEnd = new System.Windows.Forms.TextBox();
+            this.tbLoopStart = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.File = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,27 +115,15 @@
             this.mnuViewImages = new System.Windows.Forms.ToolStripMenuItem();
             this.openFD = new System.Windows.Forms.OpenFileDialog();
             this.saveFD = new System.Windows.Forms.SaveFileDialog();
-            this.btnSubtraction = new System.Windows.Forms.Button();
-            this.btnMultiplication = new System.Windows.Forms.Button();
-            this.btnDivision = new System.Windows.Forms.Button();
-            this.btnLoop = new System.Windows.Forms.Button();
-            this.tbLimit = new System.Windows.Forms.TextBox();
-            this.lsum = new System.Windows.Forms.Label();
-            this.tabTimes = new System.Windows.Forms.TabPage();
-            this.tbLoopStart = new System.Windows.Forms.TextBox();
-            this.tbLoopEnd = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btForLoop = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.lmultiplyby = new System.Windows.Forms.Label();
-            this.tbMultiplyBy = new System.Windows.Forms.TextBox();
+            this.tbDebug = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.PLAYGROUND.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Calculator.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.tabTimes.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -114,15 +132,18 @@
             this.tabControl1.Controls.Add(this.EXCEL_TAB);
             this.tabControl1.Controls.Add(this.Calculator);
             this.tabControl1.Controls.Add(this.tabTimes);
-            this.tabControl1.Location = new System.Drawing.Point(0, 36);
+            this.tabControl1.Location = new System.Drawing.Point(0, 29);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(984, 708);
+            this.tabControl1.Size = new System.Drawing.Size(875, 566);
             this.tabControl1.TabIndex = 0;
             // 
             // PLAYGROUND
             // 
             this.PLAYGROUND.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PLAYGROUND.Controls.Add(this.tbDebug);
+            this.PLAYGROUND.Controls.Add(this.btnDebug);
             this.PLAYGROUND.Controls.Add(this.lsum);
             this.PLAYGROUND.Controls.Add(this.tbLimit);
             this.PLAYGROUND.Controls.Add(this.btnLoop);
@@ -144,18 +165,58 @@
             this.PLAYGROUND.Controls.Add(this.pictureBox1);
             this.PLAYGROUND.Controls.Add(this.textBox2);
             this.PLAYGROUND.Controls.Add(this.textBox1);
-            this.PLAYGROUND.Location = new System.Drawing.Point(4, 29);
+            this.PLAYGROUND.Location = new System.Drawing.Point(4, 25);
+            this.PLAYGROUND.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PLAYGROUND.Name = "PLAYGROUND";
-            this.PLAYGROUND.Padding = new System.Windows.Forms.Padding(3);
-            this.PLAYGROUND.Size = new System.Drawing.Size(976, 675);
+            this.PLAYGROUND.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PLAYGROUND.Size = new System.Drawing.Size(867, 537);
             this.PLAYGROUND.TabIndex = 0;
             this.PLAYGROUND.Text = "PLAYGROUND";
             // 
+            // btnDebug
+            // 
+            this.btnDebug.Location = new System.Drawing.Point(597, 495);
+            this.btnDebug.Name = "btnDebug";
+            this.btnDebug.Size = new System.Drawing.Size(89, 24);
+            this.btnDebug.TabIndex = 21;
+            this.btnDebug.Text = "Debug";
+            this.btnDebug.UseVisualStyleBackColor = true;
+            this.btnDebug.Click += new System.EventHandler(this.BtnDebug_Click);
+            // 
+            // lsum
+            // 
+            this.lsum.AutoSize = true;
+            this.lsum.Location = new System.Drawing.Point(778, 438);
+            this.lsum.Name = "lsum";
+            this.lsum.Size = new System.Drawing.Size(16, 17);
+            this.lsum.TabIndex = 20;
+            this.lsum.Text = "0";
+            // 
+            // tbLimit
+            // 
+            this.tbLimit.Location = new System.Drawing.Point(708, 438);
+            this.tbLimit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbLimit.Name = "tbLimit";
+            this.tbLimit.Size = new System.Drawing.Size(52, 22);
+            this.tbLimit.TabIndex = 19;
+            // 
+            // btnLoop
+            // 
+            this.btnLoop.Location = new System.Drawing.Point(708, 466);
+            this.btnLoop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLoop.Name = "btnLoop";
+            this.btnLoop.Size = new System.Drawing.Size(115, 24);
+            this.btnLoop.TabIndex = 18;
+            this.btnLoop.Text = "Loop";
+            this.btnLoop.UseVisualStyleBackColor = true;
+            this.btnLoop.Click += new System.EventHandler(this.BtnLoop_Click);
+            // 
             // btnAnswer
             // 
-            this.btnAnswer.Location = new System.Drawing.Point(672, 583);
+            this.btnAnswer.Location = new System.Drawing.Point(597, 466);
+            this.btnAnswer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAnswer.Name = "btnAnswer";
-            this.btnAnswer.Size = new System.Drawing.Size(100, 30);
+            this.btnAnswer.Size = new System.Drawing.Size(89, 24);
             this.btnAnswer.TabIndex = 17;
             this.btnAnswer.Text = "Answer";
             this.btnAnswer.UseVisualStyleBackColor = true;
@@ -163,9 +224,10 @@
             // 
             // btnMixed
             // 
-            this.btnMixed.Location = new System.Drawing.Point(672, 547);
+            this.btnMixed.Location = new System.Drawing.Point(597, 438);
+            this.btnMixed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMixed.Name = "btnMixed";
-            this.btnMixed.Size = new System.Drawing.Size(100, 30);
+            this.btnMixed.Size = new System.Drawing.Size(89, 24);
             this.btnMixed.TabIndex = 16;
             this.btnMixed.Text = "+ and -";
             this.btnMixed.UseVisualStyleBackColor = true;
@@ -173,9 +235,10 @@
             // 
             // btnSubtract
             // 
-            this.btnSubtract.Location = new System.Drawing.Point(551, 619);
+            this.btnSubtract.Location = new System.Drawing.Point(490, 495);
+            this.btnSubtract.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubtract.Name = "btnSubtract";
-            this.btnSubtract.Size = new System.Drawing.Size(100, 30);
+            this.btnSubtract.Size = new System.Drawing.Size(89, 24);
             this.btnSubtract.TabIndex = 15;
             this.btnSubtract.Text = "Subtract";
             this.btnSubtract.UseVisualStyleBackColor = true;
@@ -183,9 +246,10 @@
             // 
             // btnAddFloats
             // 
-            this.btnAddFloats.Location = new System.Drawing.Point(551, 583);
+            this.btnAddFloats.Location = new System.Drawing.Point(490, 466);
+            this.btnAddFloats.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddFloats.Name = "btnAddFloats";
-            this.btnAddFloats.Size = new System.Drawing.Size(100, 30);
+            this.btnAddFloats.Size = new System.Drawing.Size(89, 24);
             this.btnAddFloats.TabIndex = 14;
             this.btnAddFloats.Text = "Float - Add";
             this.btnAddFloats.UseVisualStyleBackColor = true;
@@ -193,9 +257,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(551, 547);
+            this.btnAdd.Location = new System.Drawing.Point(490, 438);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 30);
+            this.btnAdd.Size = new System.Drawing.Size(89, 24);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Int - Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -203,9 +268,10 @@
             // 
             // btnDouble
             // 
-            this.btnDouble.Location = new System.Drawing.Point(425, 619);
+            this.btnDouble.Location = new System.Drawing.Point(378, 495);
+            this.btnDouble.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDouble.Name = "btnDouble";
-            this.btnDouble.Size = new System.Drawing.Size(100, 30);
+            this.btnDouble.Size = new System.Drawing.Size(89, 24);
             this.btnDouble.TabIndex = 12;
             this.btnDouble.Text = "Double";
             this.btnDouble.UseVisualStyleBackColor = true;
@@ -213,9 +279,10 @@
             // 
             // btnFloat
             // 
-            this.btnFloat.Location = new System.Drawing.Point(425, 583);
+            this.btnFloat.Location = new System.Drawing.Point(378, 466);
+            this.btnFloat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFloat.Name = "btnFloat";
-            this.btnFloat.Size = new System.Drawing.Size(100, 30);
+            this.btnFloat.Size = new System.Drawing.Size(89, 24);
             this.btnFloat.TabIndex = 11;
             this.btnFloat.Text = "Float";
             this.btnFloat.UseVisualStyleBackColor = true;
@@ -223,9 +290,10 @@
             // 
             // btnIntegers
             // 
-            this.btnIntegers.Location = new System.Drawing.Point(425, 547);
+            this.btnIntegers.Location = new System.Drawing.Point(378, 438);
+            this.btnIntegers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIntegers.Name = "btnIntegers";
-            this.btnIntegers.Size = new System.Drawing.Size(100, 30);
+            this.btnIntegers.Size = new System.Drawing.Size(89, 24);
             this.btnIntegers.TabIndex = 10;
             this.btnIntegers.Text = "Integers";
             this.btnIntegers.UseVisualStyleBackColor = true;
@@ -233,41 +301,44 @@
             // 
             // MessageTextBox
             // 
-            this.MessageTextBox.Location = new System.Drawing.Point(191, 601);
+            this.MessageTextBox.Location = new System.Drawing.Point(170, 481);
+            this.MessageTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MessageTextBox.Name = "MessageTextBox";
-            this.MessageTextBox.Size = new System.Drawing.Size(198, 26);
+            this.MessageTextBox.Size = new System.Drawing.Size(176, 22);
             this.MessageTextBox.TabIndex = 9;
             // 
             // TextMessage
             // 
             this.TextMessage.AutoSize = true;
-            this.TextMessage.Location = new System.Drawing.Point(188, 640);
+            this.TextMessage.Location = new System.Drawing.Point(167, 512);
             this.TextMessage.Name = "TextMessage";
-            this.TextMessage.Size = new System.Drawing.Size(112, 20);
+            this.TextMessage.Size = new System.Drawing.Size(99, 17);
             this.TextMessage.TabIndex = 8;
             this.TextMessage.Text = "Message Area";
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(191, 565);
+            this.nameTextBox.Location = new System.Drawing.Point(170, 452);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(101, 26);
+            this.nameTextBox.Size = new System.Drawing.Size(90, 22);
             this.nameTextBox.TabIndex = 7;
             // 
             // name_lable
             // 
             this.name_lable.AutoSize = true;
-            this.name_lable.Location = new System.Drawing.Point(188, 540);
+            this.name_lable.Location = new System.Drawing.Point(167, 432);
             this.name_lable.Name = "name_lable";
-            this.name_lable.Size = new System.Drawing.Size(51, 20);
+            this.name_lable.Size = new System.Drawing.Size(45, 17);
             this.name_lable.TabIndex = 6;
             this.name_lable.Text = "Name";
             // 
             // btnString
             // 
-            this.btnString.Location = new System.Drawing.Point(44, 601);
+            this.btnString.Location = new System.Drawing.Point(39, 481);
+            this.btnString.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnString.Name = "btnString";
-            this.btnString.Size = new System.Drawing.Size(120, 30);
+            this.btnString.Size = new System.Drawing.Size(107, 24);
             this.btnString.TabIndex = 5;
             this.btnString.Text = "Get Text Box Data";
             this.btnString.UseVisualStyleBackColor = true;
@@ -275,9 +346,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(44, 565);
+            this.button1.Location = new System.Drawing.Point(39, 452);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 30);
+            this.button1.Size = new System.Drawing.Size(98, 24);
             this.button1.TabIndex = 4;
             this.button1.Text = "A Message";
             this.button1.UseVisualStyleBackColor = true;
@@ -285,9 +357,10 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(44, 290);
+            this.richTextBox1.Location = new System.Drawing.Point(39, 232);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(897, 247);
+            this.richTextBox1.Size = new System.Drawing.Size(798, 198);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
@@ -295,29 +368,32 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = global::WindowsForms_practise.Properties.Resources.DOG;
-            this.pictureBox1.Location = new System.Drawing.Point(602, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(535, 28);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(339, 204);
+            this.pictureBox1.Size = new System.Drawing.Size(302, 164);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(323, 35);
+            this.textBox2.Location = new System.Drawing.Point(287, 28);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(202, 204);
+            this.textBox2.Size = new System.Drawing.Size(180, 164);
             this.textBox2.TabIndex = 1;
             this.textBox2.Text = "textBox2";
             this.textBox2.Visible = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 35);
+            this.textBox1.Location = new System.Drawing.Point(39, 28);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 204);
+            this.textBox1.Size = new System.Drawing.Size(174, 164);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "textBox1";
             this.textBox1.Visible = false;
@@ -325,10 +401,11 @@
             // EXCEL_TAB
             // 
             this.EXCEL_TAB.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.EXCEL_TAB.Location = new System.Drawing.Point(4, 29);
+            this.EXCEL_TAB.Location = new System.Drawing.Point(4, 25);
+            this.EXCEL_TAB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EXCEL_TAB.Name = "EXCEL_TAB";
-            this.EXCEL_TAB.Padding = new System.Windows.Forms.Padding(3);
-            this.EXCEL_TAB.Size = new System.Drawing.Size(976, 675);
+            this.EXCEL_TAB.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.EXCEL_TAB.Size = new System.Drawing.Size(867, 537);
             this.EXCEL_TAB.TabIndex = 1;
             this.EXCEL_TAB.Text = "EXCEL_TAB";
             // 
@@ -353,19 +430,57 @@
             this.Calculator.Controls.Add(this.btnTwo);
             this.Calculator.Controls.Add(this.btnOne);
             this.Calculator.Controls.Add(this.txtDisplay);
-            this.Calculator.Location = new System.Drawing.Point(4, 29);
+            this.Calculator.Location = new System.Drawing.Point(4, 25);
+            this.Calculator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Calculator.Name = "Calculator";
-            this.Calculator.Padding = new System.Windows.Forms.Padding(3);
-            this.Calculator.Size = new System.Drawing.Size(976, 675);
+            this.Calculator.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Calculator.Size = new System.Drawing.Size(867, 537);
             this.Calculator.TabIndex = 2;
             this.Calculator.Text = "Calculator";
+            // 
+            // btnDivision
+            // 
+            this.btnDivision.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDivision.Location = new System.Drawing.Point(400, 144);
+            this.btnDivision.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDivision.Name = "btnDivision";
+            this.btnDivision.Size = new System.Drawing.Size(62, 56);
+            this.btnDivision.TabIndex = 18;
+            this.btnDivision.Text = "/";
+            this.btnDivision.UseVisualStyleBackColor = true;
+            this.btnDivision.Click += new System.EventHandler(this.BtnDivision_Click);
+            // 
+            // btnMultiplication
+            // 
+            this.btnMultiplication.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnMultiplication.Location = new System.Drawing.Point(400, 64);
+            this.btnMultiplication.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMultiplication.Name = "btnMultiplication";
+            this.btnMultiplication.Size = new System.Drawing.Size(62, 56);
+            this.btnMultiplication.TabIndex = 17;
+            this.btnMultiplication.Text = "*";
+            this.btnMultiplication.UseVisualStyleBackColor = true;
+            this.btnMultiplication.Click += new System.EventHandler(this.BtnMultiplication_Click);
+            // 
+            // btnSubtraction
+            // 
+            this.btnSubtraction.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSubtraction.Location = new System.Drawing.Point(311, 144);
+            this.btnSubtraction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubtraction.Name = "btnSubtraction";
+            this.btnSubtraction.Size = new System.Drawing.Size(62, 56);
+            this.btnSubtraction.TabIndex = 16;
+            this.btnSubtraction.Text = "-";
+            this.btnSubtraction.UseVisualStyleBackColor = true;
+            this.btnSubtraction.Click += new System.EventHandler(this.BtnSubtraction_Click);
             // 
             // btnEquals
             // 
             this.btnEquals.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnEquals.Location = new System.Drawing.Point(350, 380);
+            this.btnEquals.Location = new System.Drawing.Point(311, 304);
+            this.btnEquals.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEquals.Name = "btnEquals";
-            this.btnEquals.Size = new System.Drawing.Size(70, 70);
+            this.btnEquals.Size = new System.Drawing.Size(62, 56);
             this.btnEquals.TabIndex = 14;
             this.btnEquals.Text = "=";
             this.btnEquals.UseVisualStyleBackColor = true;
@@ -374,9 +489,10 @@
             // btnAddition
             // 
             this.btnAddition.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAddition.Location = new System.Drawing.Point(350, 80);
+            this.btnAddition.Location = new System.Drawing.Point(311, 64);
+            this.btnAddition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddition.Name = "btnAddition";
-            this.btnAddition.Size = new System.Drawing.Size(70, 70);
+            this.btnAddition.Size = new System.Drawing.Size(62, 56);
             this.btnAddition.TabIndex = 13;
             this.btnAddition.Text = "+";
             this.btnAddition.UseVisualStyleBackColor = true;
@@ -385,9 +501,10 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
-            this.btnClear.Location = new System.Drawing.Point(250, 380);
+            this.btnClear.Location = new System.Drawing.Point(222, 304);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(70, 70);
+            this.btnClear.Size = new System.Drawing.Size(62, 56);
             this.btnClear.TabIndex = 12;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -396,9 +513,10 @@
             // btnDot
             // 
             this.btnDot.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDot.Location = new System.Drawing.Point(50, 380);
+            this.btnDot.Location = new System.Drawing.Point(44, 304);
+            this.btnDot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDot.Name = "btnDot";
-            this.btnDot.Size = new System.Drawing.Size(70, 70);
+            this.btnDot.Size = new System.Drawing.Size(62, 56);
             this.btnDot.TabIndex = 11;
             this.btnDot.Text = ".";
             this.btnDot.UseVisualStyleBackColor = true;
@@ -407,9 +525,10 @@
             // btnZero
             // 
             this.btnZero.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnZero.Location = new System.Drawing.Point(150, 380);
+            this.btnZero.Location = new System.Drawing.Point(133, 304);
+            this.btnZero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnZero.Name = "btnZero";
-            this.btnZero.Size = new System.Drawing.Size(70, 70);
+            this.btnZero.Size = new System.Drawing.Size(62, 56);
             this.btnZero.TabIndex = 10;
             this.btnZero.Text = "0";
             this.btnZero.UseVisualStyleBackColor = true;
@@ -418,9 +537,10 @@
             // btnNine
             // 
             this.btnNine.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnNine.Location = new System.Drawing.Point(250, 280);
+            this.btnNine.Location = new System.Drawing.Point(222, 224);
+            this.btnNine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNine.Name = "btnNine";
-            this.btnNine.Size = new System.Drawing.Size(70, 70);
+            this.btnNine.Size = new System.Drawing.Size(62, 56);
             this.btnNine.TabIndex = 9;
             this.btnNine.Text = "9";
             this.btnNine.UseVisualStyleBackColor = true;
@@ -429,9 +549,10 @@
             // btnEight
             // 
             this.btnEight.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnEight.Location = new System.Drawing.Point(150, 280);
+            this.btnEight.Location = new System.Drawing.Point(133, 224);
+            this.btnEight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEight.Name = "btnEight";
-            this.btnEight.Size = new System.Drawing.Size(70, 70);
+            this.btnEight.Size = new System.Drawing.Size(62, 56);
             this.btnEight.TabIndex = 8;
             this.btnEight.Text = "8";
             this.btnEight.UseVisualStyleBackColor = true;
@@ -440,9 +561,10 @@
             // btnSeven
             // 
             this.btnSeven.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSeven.Location = new System.Drawing.Point(50, 280);
+            this.btnSeven.Location = new System.Drawing.Point(44, 224);
+            this.btnSeven.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSeven.Name = "btnSeven";
-            this.btnSeven.Size = new System.Drawing.Size(70, 70);
+            this.btnSeven.Size = new System.Drawing.Size(62, 56);
             this.btnSeven.TabIndex = 7;
             this.btnSeven.Text = "7";
             this.btnSeven.UseVisualStyleBackColor = true;
@@ -451,9 +573,10 @@
             // btnSix
             // 
             this.btnSix.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSix.Location = new System.Drawing.Point(250, 180);
+            this.btnSix.Location = new System.Drawing.Point(222, 144);
+            this.btnSix.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSix.Name = "btnSix";
-            this.btnSix.Size = new System.Drawing.Size(70, 70);
+            this.btnSix.Size = new System.Drawing.Size(62, 56);
             this.btnSix.TabIndex = 6;
             this.btnSix.Text = "6";
             this.btnSix.UseVisualStyleBackColor = true;
@@ -462,9 +585,10 @@
             // btnFive
             // 
             this.btnFive.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnFive.Location = new System.Drawing.Point(150, 180);
+            this.btnFive.Location = new System.Drawing.Point(133, 144);
+            this.btnFive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFive.Name = "btnFive";
-            this.btnFive.Size = new System.Drawing.Size(70, 70);
+            this.btnFive.Size = new System.Drawing.Size(62, 56);
             this.btnFive.TabIndex = 5;
             this.btnFive.Text = "5";
             this.btnFive.UseVisualStyleBackColor = true;
@@ -473,9 +597,10 @@
             // btnFour
             // 
             this.btnFour.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnFour.Location = new System.Drawing.Point(50, 180);
+            this.btnFour.Location = new System.Drawing.Point(44, 144);
+            this.btnFour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFour.Name = "btnFour";
-            this.btnFour.Size = new System.Drawing.Size(70, 70);
+            this.btnFour.Size = new System.Drawing.Size(62, 56);
             this.btnFour.TabIndex = 4;
             this.btnFour.Text = "4";
             this.btnFour.UseVisualStyleBackColor = true;
@@ -484,9 +609,10 @@
             // btnThree
             // 
             this.btnThree.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnThree.Location = new System.Drawing.Point(250, 80);
+            this.btnThree.Location = new System.Drawing.Point(222, 64);
+            this.btnThree.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThree.Name = "btnThree";
-            this.btnThree.Size = new System.Drawing.Size(70, 70);
+            this.btnThree.Size = new System.Drawing.Size(62, 56);
             this.btnThree.TabIndex = 3;
             this.btnThree.Text = "3";
             this.btnThree.UseVisualStyleBackColor = true;
@@ -495,9 +621,10 @@
             // btnTwo
             // 
             this.btnTwo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnTwo.Location = new System.Drawing.Point(150, 80);
+            this.btnTwo.Location = new System.Drawing.Point(133, 64);
+            this.btnTwo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTwo.Name = "btnTwo";
-            this.btnTwo.Size = new System.Drawing.Size(70, 70);
+            this.btnTwo.Size = new System.Drawing.Size(62, 56);
             this.btnTwo.TabIndex = 2;
             this.btnTwo.Text = "2";
             this.btnTwo.UseVisualStyleBackColor = true;
@@ -507,9 +634,10 @@
             // 
             this.btnOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnOne.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnOne.Location = new System.Drawing.Point(50, 80);
+            this.btnOne.Location = new System.Drawing.Point(44, 64);
+            this.btnOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOne.Name = "btnOne";
-            this.btnOne.Size = new System.Drawing.Size(70, 70);
+            this.btnOne.Size = new System.Drawing.Size(62, 56);
             this.btnOne.TabIndex = 1;
             this.btnOne.Text = "1";
             this.btnOne.UseVisualStyleBackColor = false;
@@ -517,11 +645,272 @@
             // 
             // txtDisplay
             // 
-            this.txtDisplay.Location = new System.Drawing.Point(50, 31);
+            this.txtDisplay.Location = new System.Drawing.Point(44, 25);
+            this.txtDisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDisplay.Name = "txtDisplay";
-            this.txtDisplay.Size = new System.Drawing.Size(270, 26);
+            this.txtDisplay.Size = new System.Drawing.Size(240, 22);
             this.txtDisplay.TabIndex = 0;
             this.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // tabTimes
+            // 
+            this.tabTimes.Controls.Add(this.bFavoriteMovie);
+            this.tabTimes.Controls.Add(this.bSelectMovies);
+            this.tabTimes.Controls.Add(this.groupBox2);
+            this.tabTimes.Controls.Add(this.groupBox1);
+            this.tabTimes.Controls.Add(this.lmultiplyby);
+            this.tabTimes.Controls.Add(this.tbMultiplyBy);
+            this.tabTimes.Controls.Add(this.listBox1);
+            this.tabTimes.Controls.Add(this.btForLoop);
+            this.tabTimes.Controls.Add(this.label2);
+            this.tabTimes.Controls.Add(this.label1);
+            this.tabTimes.Controls.Add(this.tbLoopEnd);
+            this.tabTimes.Controls.Add(this.tbLoopStart);
+            this.tabTimes.Location = new System.Drawing.Point(4, 25);
+            this.tabTimes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabTimes.Name = "tabTimes";
+            this.tabTimes.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabTimes.Size = new System.Drawing.Size(867, 537);
+            this.tabTimes.TabIndex = 3;
+            this.tabTimes.Text = "Times";
+            this.tabTimes.UseVisualStyleBackColor = true;
+            // 
+            // bFavoriteMovie
+            // 
+            this.bFavoriteMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bFavoriteMovie.Location = new System.Drawing.Point(673, 256);
+            this.bFavoriteMovie.Name = "bFavoriteMovie";
+            this.bFavoriteMovie.Size = new System.Drawing.Size(139, 29);
+            this.bFavoriteMovie.TabIndex = 11;
+            this.bFavoriteMovie.Text = "Favorite Movie";
+            this.bFavoriteMovie.UseVisualStyleBackColor = true;
+            this.bFavoriteMovie.Click += new System.EventHandler(this.BFavoriteMovie_Click);
+            // 
+            // bSelectMovies
+            // 
+            this.bSelectMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bSelectMovies.Location = new System.Drawing.Point(455, 256);
+            this.bSelectMovies.Name = "bSelectMovies";
+            this.bSelectMovies.Size = new System.Drawing.Size(140, 29);
+            this.bSelectMovies.TabIndex = 10;
+            this.bSelectMovies.Text = "Select Movies";
+            this.bSelectMovies.UseVisualStyleBackColor = true;
+            this.bSelectMovies.Click += new System.EventHandler(this.BSelectMovies_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbAnimation);
+            this.groupBox2.Controls.Add(this.rbRomance);
+            this.groupBox2.Controls.Add(this.rbScienceFiction);
+            this.groupBox2.Controls.Add(this.rbAction);
+            this.groupBox2.Controls.Add(this.rbComedy);
+            this.groupBox2.Location = new System.Drawing.Point(653, 40);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(183, 210);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "And Your Favorite Is?";
+            // 
+            // rbAnimation
+            // 
+            this.rbAnimation.AutoSize = true;
+            this.rbAnimation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.rbAnimation.Location = new System.Drawing.Point(20, 161);
+            this.rbAnimation.Name = "rbAnimation";
+            this.rbAnimation.Size = new System.Drawing.Size(100, 21);
+            this.rbAnimation.TabIndex = 4;
+            this.rbAnimation.TabStop = true;
+            this.rbAnimation.Text = "Animation";
+            this.rbAnimation.UseVisualStyleBackColor = true;
+            // 
+            // rbRomance
+            // 
+            this.rbRomance.AutoSize = true;
+            this.rbRomance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.rbRomance.Location = new System.Drawing.Point(20, 134);
+            this.rbRomance.Name = "rbRomance";
+            this.rbRomance.Size = new System.Drawing.Size(96, 21);
+            this.rbRomance.TabIndex = 3;
+            this.rbRomance.TabStop = true;
+            this.rbRomance.Text = "Romance";
+            this.rbRomance.UseVisualStyleBackColor = true;
+            // 
+            // rbScienceFiction
+            // 
+            this.rbScienceFiction.AutoSize = true;
+            this.rbScienceFiction.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.rbScienceFiction.Location = new System.Drawing.Point(20, 107);
+            this.rbScienceFiction.Name = "rbScienceFiction";
+            this.rbScienceFiction.Size = new System.Drawing.Size(139, 21);
+            this.rbScienceFiction.TabIndex = 2;
+            this.rbScienceFiction.TabStop = true;
+            this.rbScienceFiction.Text = "Science Fiction";
+            this.rbScienceFiction.UseVisualStyleBackColor = true;
+            // 
+            // rbAction
+            // 
+            this.rbAction.AutoSize = true;
+            this.rbAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.rbAction.Location = new System.Drawing.Point(20, 80);
+            this.rbAction.Name = "rbAction";
+            this.rbAction.Size = new System.Drawing.Size(74, 21);
+            this.rbAction.TabIndex = 1;
+            this.rbAction.TabStop = true;
+            this.rbAction.Text = "Action";
+            this.rbAction.UseVisualStyleBackColor = true;
+            // 
+            // rbComedy
+            // 
+            this.rbComedy.AutoSize = true;
+            this.rbComedy.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbComedy.Location = new System.Drawing.Point(20, 56);
+            this.rbComedy.Name = "rbComedy";
+            this.rbComedy.Size = new System.Drawing.Size(86, 21);
+            this.rbComedy.TabIndex = 0;
+            this.rbComedy.TabStop = true;
+            this.rbComedy.Text = "Comedy";
+            this.rbComedy.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cbAnimation);
+            this.groupBox1.Controls.Add(this.cbRomance);
+            this.groupBox1.Controls.Add(this.cbScienceFiction);
+            this.groupBox1.Controls.Add(this.cbAction);
+            this.groupBox1.Controls.Add(this.cbComedy);
+            this.groupBox1.Location = new System.Drawing.Point(434, 40);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(182, 210);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "What Tipe Of Movies Do You Like?";
+            // 
+            // cbAnimation
+            // 
+            this.cbAnimation.AutoSize = true;
+            this.cbAnimation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.cbAnimation.Location = new System.Drawing.Point(21, 161);
+            this.cbAnimation.Name = "cbAnimation";
+            this.cbAnimation.Size = new System.Drawing.Size(101, 21);
+            this.cbAnimation.TabIndex = 4;
+            this.cbAnimation.Text = "Animation";
+            this.cbAnimation.UseVisualStyleBackColor = true;
+            // 
+            // cbRomance
+            // 
+            this.cbRomance.AutoSize = true;
+            this.cbRomance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.cbRomance.Location = new System.Drawing.Point(21, 134);
+            this.cbRomance.Name = "cbRomance";
+            this.cbRomance.Size = new System.Drawing.Size(97, 21);
+            this.cbRomance.TabIndex = 3;
+            this.cbRomance.Text = "Romance";
+            this.cbRomance.UseVisualStyleBackColor = true;
+            // 
+            // cbScienceFiction
+            // 
+            this.cbScienceFiction.AutoSize = true;
+            this.cbScienceFiction.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.cbScienceFiction.Location = new System.Drawing.Point(21, 107);
+            this.cbScienceFiction.Name = "cbScienceFiction";
+            this.cbScienceFiction.Size = new System.Drawing.Size(140, 21);
+            this.cbScienceFiction.TabIndex = 2;
+            this.cbScienceFiction.Text = "Science Fiction";
+            this.cbScienceFiction.UseVisualStyleBackColor = true;
+            // 
+            // cbAction
+            // 
+            this.cbAction.AutoSize = true;
+            this.cbAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.cbAction.Location = new System.Drawing.Point(21, 80);
+            this.cbAction.Name = "cbAction";
+            this.cbAction.Size = new System.Drawing.Size(75, 21);
+            this.cbAction.TabIndex = 1;
+            this.cbAction.Text = "Action";
+            this.cbAction.UseVisualStyleBackColor = true;
+            // 
+            // cbComedy
+            // 
+            this.cbComedy.AutoSize = true;
+            this.cbComedy.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbComedy.Location = new System.Drawing.Point(21, 53);
+            this.cbComedy.Name = "cbComedy";
+            this.cbComedy.Size = new System.Drawing.Size(87, 21);
+            this.cbComedy.TabIndex = 0;
+            this.cbComedy.Text = "Comedy";
+            this.cbComedy.UseVisualStyleBackColor = true;
+            // 
+            // lmultiplyby
+            // 
+            this.lmultiplyby.AutoSize = true;
+            this.lmultiplyby.Location = new System.Drawing.Point(44, 160);
+            this.lmultiplyby.Name = "lmultiplyby";
+            this.lmultiplyby.Size = new System.Drawing.Size(75, 17);
+            this.lmultiplyby.TabIndex = 7;
+            this.lmultiplyby.Text = "Multiply By";
+            // 
+            // tbMultiplyBy
+            // 
+            this.tbMultiplyBy.Location = new System.Drawing.Point(44, 180);
+            this.tbMultiplyBy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbMultiplyBy.Name = "tbMultiplyBy";
+            this.tbMultiplyBy.Size = new System.Drawing.Size(89, 22);
+            this.tbMultiplyBy.TabIndex = 6;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(222, 40);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(178, 212);
+            this.listBox1.TabIndex = 5;
+            // 
+            // btForLoop
+            // 
+            this.btForLoop.Location = new System.Drawing.Point(44, 224);
+            this.btForLoop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btForLoop.Name = "btForLoop";
+            this.btForLoop.Size = new System.Drawing.Size(107, 24);
+            this.btForLoop.TabIndex = 4;
+            this.btForLoop.Text = "For Loop";
+            this.btForLoop.UseVisualStyleBackColor = true;
+            this.btForLoop.Click += new System.EventHandler(this.BtForLoop_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(44, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "End Number";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(44, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Start Number";
+            // 
+            // tbLoopEnd
+            // 
+            this.tbLoopEnd.Location = new System.Drawing.Point(44, 116);
+            this.tbLoopEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbLoopEnd.Name = "tbLoopEnd";
+            this.tbLoopEnd.Size = new System.Drawing.Size(89, 22);
+            this.tbLoopEnd.TabIndex = 1;
+            // 
+            // tbLoopStart
+            // 
+            this.tbLoopStart.Location = new System.Drawing.Point(44, 52);
+            this.tbLoopStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbLoopStart.Name = "tbLoopStart";
+            this.tbLoopStart.Size = new System.Drawing.Size(89, 22);
+            this.tbLoopStart.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -532,7 +921,8 @@
             this.View});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(984, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(875, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -545,7 +935,7 @@
             this.toolStripMenuItem1,
             this.mnuQuit});
             this.File.Name = "File";
-            this.File.Size = new System.Drawing.Size(54, 29);
+            this.File.Size = new System.Drawing.Size(46, 24);
             this.File.Text = "&File";
             // 
             // mnuNew
@@ -554,26 +944,26 @@
             this.subNewProject,
             this.subNewFile});
             this.mnuNew.Name = "mnuNew";
-            this.mnuNew.Size = new System.Drawing.Size(261, 34);
+            this.mnuNew.Size = new System.Drawing.Size(213, 26);
             this.mnuNew.Text = "&New";
             // 
             // subNewProject
             // 
             this.subNewProject.Name = "subNewProject";
-            this.subNewProject.Size = new System.Drawing.Size(208, 34);
+            this.subNewProject.Size = new System.Drawing.Size(172, 26);
             this.subNewProject.Text = "New Project";
             // 
             // subNewFile
             // 
             this.subNewFile.Name = "subNewFile";
-            this.subNewFile.Size = new System.Drawing.Size(208, 34);
+            this.subNewFile.Size = new System.Drawing.Size(172, 26);
             this.subNewFile.Text = "New File";
             // 
             // mnuOpen
             // 
             this.mnuOpen.Name = "mnuOpen";
             this.mnuOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.mnuOpen.Size = new System.Drawing.Size(261, 34);
+            this.mnuOpen.Size = new System.Drawing.Size(213, 26);
             this.mnuOpen.Text = "&Open";
             this.mnuOpen.Click += new System.EventHandler(this.MnuOpen_Click);
             // 
@@ -581,21 +971,21 @@
             // 
             this.mnuSave.Name = "mnuSave";
             this.mnuSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.mnuSave.Size = new System.Drawing.Size(261, 34);
+            this.mnuSave.Size = new System.Drawing.Size(213, 26);
             this.mnuSave.Text = "&Save";
             this.mnuSave.Click += new System.EventHandler(this.MnuSave_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(258, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(210, 6);
             // 
             // mnuQuit
             // 
             this.mnuQuit.Name = "mnuQuit";
             this.mnuQuit.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.Q)));
-            this.mnuQuit.Size = new System.Drawing.Size(261, 34);
+            this.mnuQuit.Size = new System.Drawing.Size(213, 26);
             this.mnuQuit.Text = "&Quit";
             this.mnuQuit.Click += new System.EventHandler(this.MnuQuit_Click);
             // 
@@ -607,14 +997,14 @@
             this.mnuCopy,
             this.mnuPaste});
             this.Edit.Name = "Edit";
-            this.Edit.Size = new System.Drawing.Size(58, 29);
+            this.Edit.Size = new System.Drawing.Size(49, 24);
             this.Edit.Text = "Edit";
             // 
             // mnuUndo
             // 
             this.mnuUndo.Name = "mnuUndo";
             this.mnuUndo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.mnuUndo.Size = new System.Drawing.Size(219, 34);
+            this.mnuUndo.Size = new System.Drawing.Size(179, 26);
             this.mnuUndo.Text = "Undo";
             this.mnuUndo.Click += new System.EventHandler(this.MnuUndo_Click);
             // 
@@ -622,7 +1012,7 @@
             // 
             this.mnuCut.Name = "mnuCut";
             this.mnuCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.mnuCut.Size = new System.Drawing.Size(219, 34);
+            this.mnuCut.Size = new System.Drawing.Size(179, 26);
             this.mnuCut.Text = "Cu&t";
             this.mnuCut.Click += new System.EventHandler(this.MnuCut_Click);
             // 
@@ -630,7 +1020,7 @@
             // 
             this.mnuCopy.Name = "mnuCopy";
             this.mnuCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.mnuCopy.Size = new System.Drawing.Size(219, 34);
+            this.mnuCopy.Size = new System.Drawing.Size(179, 26);
             this.mnuCopy.Text = "Copy";
             this.mnuCopy.Click += new System.EventHandler(this.MnuCopy_Click);
             // 
@@ -638,7 +1028,7 @@
             // 
             this.mnuPaste.Name = "mnuPaste";
             this.mnuPaste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.mnuPaste.Size = new System.Drawing.Size(219, 34);
+            this.mnuPaste.Size = new System.Drawing.Size(179, 26);
             this.mnuPaste.Text = "&Paste";
             this.mnuPaste.Click += new System.EventHandler(this.MnuPaste_Click);
             // 
@@ -649,7 +1039,7 @@
             this.mnuViewLabels,
             this.mnuViewImages});
             this.View.Name = "View";
-            this.View.Size = new System.Drawing.Size(65, 29);
+            this.View.Size = new System.Drawing.Size(55, 24);
             this.View.Text = "View";
             // 
             // mnuViewTextBoxes
@@ -657,7 +1047,7 @@
             this.mnuViewTextBoxes.Name = "mnuViewTextBoxes";
             this.mnuViewTextBoxes.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.T)));
-            this.mnuViewTextBoxes.Size = new System.Drawing.Size(345, 34);
+            this.mnuViewTextBoxes.Size = new System.Drawing.Size(288, 26);
             this.mnuViewTextBoxes.Text = "View Text &Boxes";
             this.mnuViewTextBoxes.Click += new System.EventHandler(this.MnuViewTextBoxes_Click);
             // 
@@ -666,7 +1056,7 @@
             this.mnuViewLabels.Name = "mnuViewLabels";
             this.mnuViewLabels.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.L)));
-            this.mnuViewLabels.Size = new System.Drawing.Size(345, 34);
+            this.mnuViewLabels.Size = new System.Drawing.Size(288, 26);
             this.mnuViewLabels.Text = "View &Labels";
             // 
             // mnuViewImages
@@ -674,161 +1064,25 @@
             this.mnuViewImages.Name = "mnuViewImages";
             this.mnuViewImages.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.I)));
-            this.mnuViewImages.Size = new System.Drawing.Size(345, 34);
+            this.mnuViewImages.Size = new System.Drawing.Size(288, 26);
             this.mnuViewImages.Text = "View &Images";
             this.mnuViewImages.Click += new System.EventHandler(this.MnuViewImages_Click);
             // 
-            // btnSubtraction
+            // tbDebug
             // 
-            this.btnSubtraction.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSubtraction.Location = new System.Drawing.Point(350, 180);
-            this.btnSubtraction.Name = "btnSubtraction";
-            this.btnSubtraction.Size = new System.Drawing.Size(70, 70);
-            this.btnSubtraction.TabIndex = 16;
-            this.btnSubtraction.Text = "-";
-            this.btnSubtraction.UseVisualStyleBackColor = true;
-            this.btnSubtraction.Click += new System.EventHandler(this.BtnSubtraction_Click);
-            // 
-            // btnMultiplication
-            // 
-            this.btnMultiplication.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnMultiplication.Location = new System.Drawing.Point(450, 80);
-            this.btnMultiplication.Name = "btnMultiplication";
-            this.btnMultiplication.Size = new System.Drawing.Size(70, 70);
-            this.btnMultiplication.TabIndex = 17;
-            this.btnMultiplication.Text = "*";
-            this.btnMultiplication.UseVisualStyleBackColor = true;
-            this.btnMultiplication.Click += new System.EventHandler(this.BtnMultiplication_Click);
-            // 
-            // btnDivision
-            // 
-            this.btnDivision.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnDivision.Location = new System.Drawing.Point(450, 180);
-            this.btnDivision.Name = "btnDivision";
-            this.btnDivision.Size = new System.Drawing.Size(70, 70);
-            this.btnDivision.TabIndex = 18;
-            this.btnDivision.Text = "/";
-            this.btnDivision.UseVisualStyleBackColor = true;
-            this.btnDivision.Click += new System.EventHandler(this.BtnDivision_Click);
-            // 
-            // btnLoop
-            // 
-            this.btnLoop.Location = new System.Drawing.Point(797, 583);
-            this.btnLoop.Name = "btnLoop";
-            this.btnLoop.Size = new System.Drawing.Size(129, 30);
-            this.btnLoop.TabIndex = 18;
-            this.btnLoop.Text = "Loop";
-            this.btnLoop.UseVisualStyleBackColor = true;
-            this.btnLoop.Click += new System.EventHandler(this.BtnLoop_Click);
-            // 
-            // tbLimit
-            // 
-            this.tbLimit.Location = new System.Drawing.Point(796, 547);
-            this.tbLimit.Name = "tbLimit";
-            this.tbLimit.Size = new System.Drawing.Size(58, 26);
-            this.tbLimit.TabIndex = 19;
-            // 
-            // lsum
-            // 
-            this.lsum.AutoSize = true;
-            this.lsum.Location = new System.Drawing.Point(875, 547);
-            this.lsum.Name = "lsum";
-            this.lsum.Size = new System.Drawing.Size(18, 20);
-            this.lsum.TabIndex = 20;
-            this.lsum.Text = "0";
-            // 
-            // tabTimes
-            // 
-            this.tabTimes.Controls.Add(this.lmultiplyby);
-            this.tabTimes.Controls.Add(this.tbMultiplyBy);
-            this.tabTimes.Controls.Add(this.listBox1);
-            this.tabTimes.Controls.Add(this.btForLoop);
-            this.tabTimes.Controls.Add(this.label2);
-            this.tabTimes.Controls.Add(this.label1);
-            this.tabTimes.Controls.Add(this.tbLoopEnd);
-            this.tabTimes.Controls.Add(this.tbLoopStart);
-            this.tabTimes.Location = new System.Drawing.Point(4, 29);
-            this.tabTimes.Name = "tabTimes";
-            this.tabTimes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTimes.Size = new System.Drawing.Size(976, 675);
-            this.tabTimes.TabIndex = 3;
-            this.tabTimes.Text = "Times";
-            this.tabTimes.UseVisualStyleBackColor = true;
-            // 
-            // tbLoopStart
-            // 
-            this.tbLoopStart.Location = new System.Drawing.Point(50, 65);
-            this.tbLoopStart.Name = "tbLoopStart";
-            this.tbLoopStart.Size = new System.Drawing.Size(100, 26);
-            this.tbLoopStart.TabIndex = 0;
-            // 
-            // tbLoopEnd
-            // 
-            this.tbLoopEnd.Location = new System.Drawing.Point(50, 145);
-            this.tbLoopEnd.Name = "tbLoopEnd";
-            this.tbLoopEnd.Size = new System.Drawing.Size(100, 26);
-            this.tbLoopEnd.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Start Number";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 120);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "End Number";
-            // 
-            // btForLoop
-            // 
-            this.btForLoop.Location = new System.Drawing.Point(50, 280);
-            this.btForLoop.Name = "btForLoop";
-            this.btForLoop.Size = new System.Drawing.Size(120, 30);
-            this.btForLoop.TabIndex = 4;
-            this.btForLoop.Text = "For Loop";
-            this.btForLoop.UseVisualStyleBackColor = true;
-            this.btForLoop.Click += new System.EventHandler(this.BtForLoop_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(250, 50);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(200, 264);
-            this.listBox1.TabIndex = 5;
-            // 
-            // lmultiplyby
-            // 
-            this.lmultiplyby.AutoSize = true;
-            this.lmultiplyby.Location = new System.Drawing.Point(50, 200);
-            this.lmultiplyby.Name = "lmultiplyby";
-            this.lmultiplyby.Size = new System.Drawing.Size(83, 20);
-            this.lmultiplyby.TabIndex = 7;
-            this.lmultiplyby.Text = "Multiply By";
-            // 
-            // tbMultiplyBy
-            // 
-            this.tbMultiplyBy.Location = new System.Drawing.Point(50, 225);
-            this.tbMultiplyBy.Name = "tbMultiplyBy";
-            this.tbMultiplyBy.Size = new System.Drawing.Size(100, 26);
-            this.tbMultiplyBy.TabIndex = 6;
+            this.tbDebug.Location = new System.Drawing.Point(711, 495);
+            this.tbDebug.Name = "tbDebug";
+            this.tbDebug.Size = new System.Drawing.Size(82, 22);
+            this.tbDebug.TabIndex = 22;
             // 
             // Practise_app
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 744);
+            this.ClientSize = new System.Drawing.Size(875, 595);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Practise_app";
             this.Text = "Practise_app";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -838,10 +1092,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Calculator.ResumeLayout(false);
             this.Calculator.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.tabTimes.ResumeLayout(false);
             this.tabTimes.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -921,6 +1179,22 @@
         private System.Windows.Forms.TextBox tbLoopStart;
         private System.Windows.Forms.Label lmultiplyby;
         private System.Windows.Forms.TextBox tbMultiplyBy;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox cbAnimation;
+        private System.Windows.Forms.CheckBox cbRomance;
+        private System.Windows.Forms.CheckBox cbScienceFiction;
+        private System.Windows.Forms.CheckBox cbAction;
+        private System.Windows.Forms.CheckBox cbComedy;
+        private System.Windows.Forms.Button bFavoriteMovie;
+        private System.Windows.Forms.Button bSelectMovies;
+        private System.Windows.Forms.RadioButton rbAnimation;
+        private System.Windows.Forms.RadioButton rbRomance;
+        private System.Windows.Forms.RadioButton rbScienceFiction;
+        private System.Windows.Forms.RadioButton rbAction;
+        private System.Windows.Forms.RadioButton rbComedy;
+        private System.Windows.Forms.Button btnDebug;
+        private System.Windows.Forms.TextBox tbDebug;
     }
 }
 
