@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace WindowsForms_practise
 {
@@ -19,6 +20,7 @@ namespace WindowsForms_practise
         public Practise_app()
         {
             InitializeComponent();
+            initialize_combobox();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -582,6 +584,503 @@ namespace WindowsForms_practise
                 }
             }
             tbDebug.Text = "g count is " + lettercount.ToString();
+        }
+
+        private void BAddUp_Click(object sender, EventArgs e)
+        {
+            int firstNumber;
+            int secondNumber;
+            bool isNumber;
+            isNumber = int.TryParse(tbFirstNumber.Text, out firstNumber);
+            if (!isNumber)
+                MessageBox.Show("Please Enter 1st number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                isNumber = int.TryParse(tbSecondNumber.Text, out secondNumber);
+                if (!isNumber)
+                    MessageBox.Show("Please Enter 2nd number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    AddUp(firstNumber, secondNumber);
+                }
+            }               
+        }
+
+        void AddUp(int firstNumber, int secondNumber)
+        {
+            int answer = firstNumber + secondNumber;
+            MessageBox.Show(firstNumber.ToString() + " + " + secondNumber.ToString() + " = " + answer.ToString(), "Add Up");
+
+            return;
+        }
+
+        private int Subtract(int firstNumber, int secondNumber)
+        {
+            return firstNumber - secondNumber;
+        }
+        private int Multiply(int firstNumber, int secondNumber)
+        {
+            return firstNumber * secondNumber;
+        }
+
+        private int Divide(int firstNumber, int secondNumber)
+        {
+            return firstNumber / secondNumber;
+        }
+
+        private void BSubtract_Click(object sender, EventArgs e)
+        {
+            int firstNumber;
+            int secondNumber;
+            bool isNumber;
+            int answer;
+            isNumber = int.TryParse(tbFirstNumber.Text, out firstNumber);
+            if (!isNumber)
+                MessageBox.Show("Please Enter 1st number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                isNumber = int.TryParse(tbSecondNumber.Text, out secondNumber);
+                if (!isNumber)
+                    MessageBox.Show("Please Enter 2nd number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    answer = Subtract(firstNumber, secondNumber);
+                    MessageBox.Show(firstNumber.ToString() + " - " + secondNumber.ToString() + " = " + answer.ToString(), "Subtraction");
+                }
+            }
+        }
+
+        private void BDivide_Click(object sender, EventArgs e)
+        {
+            int firstNumber;
+            int secondNumber;
+            bool isNumber;
+            int answer;
+            isNumber = int.TryParse(tbFirstNumber.Text, out firstNumber);
+            if (!isNumber)
+                MessageBox.Show("Please Enter 1st number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                isNumber = int.TryParse(tbSecondNumber.Text, out secondNumber);
+                if (!isNumber)
+                    MessageBox.Show("Please Enter 2nd number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    answer = Divide(firstNumber, secondNumber);
+                    MessageBox.Show(firstNumber.ToString() + " / " + secondNumber.ToString() + " = " + answer.ToString(), "Division");
+                }
+            }
+        }
+
+        private void BMultiply_Click(object sender, EventArgs e)
+        {
+            int firstNumber;
+            int secondNumber;
+            bool isNumber;
+            int answer;
+            isNumber = int.TryParse(tbFirstNumber.Text, out firstNumber);
+            if (!isNumber)
+                MessageBox.Show("Please Enter 1st number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                isNumber = int.TryParse(tbSecondNumber.Text, out secondNumber);
+                if (!isNumber)
+                    MessageBox.Show("Please Enter 2nd number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    answer = Multiply(firstNumber, secondNumber);
+                    MessageBox.Show(firstNumber.ToString() + " * " + secondNumber.ToString() + " = " + answer.ToString(), "Multiplication");
+                }
+            }
+        }
+
+        private void BtnArrays_Click(object sender, EventArgs e)
+        {
+            //clear listBox
+            listBox1.Items.Clear();
+
+            //Create array int
+            /*
+            int[] lottery_numbers;
+            int startValue;
+            int endValue;
+            int multiplyBy;
+            bool isNumber;
+            isNumber = int.TryParse(tbLoopStart.Text, out startValue);
+            if (!isNumber)
+                MessageBox.Show("Please enter value in Start Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                isNumber = int.TryParse(tbLoopEnd.Text, out endValue);
+
+                if (!isNumber)
+                    MessageBox.Show("Please enter value in End Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    isNumber = int.TryParse(tbMultiplyBy.Text, out multiplyBy);
+
+                    if (!isNumber)
+                        MessageBox.Show("Please enter value in Multiply By", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        lottery_numbers = new int[endValue - startValue + 1]; //startValue = 1; endValue = 10; to get table from start to end (including) we need to add 1 entry at end (endValue)
+                        for (int i = 0; i < lottery_numbers.Length; i++)
+                        {
+                            lottery_numbers[i] = (startValue + i) * multiplyBy; //Add value to array at position i
+                            listBox1.Items.Add((1+i).ToString() + " times " + multiplyBy.ToString() + " equals " + lottery_numbers[i].ToString()); //Display value from array at position i in listBox
+                        }
+                    }
+                }
+                
+            }
+            */
+
+            //String array example
+            string[] stringArray;
+            stringArray = new string[5];
+
+            stringArray[0] = "This";
+            stringArray[1] = "is";
+            stringArray[2] = "a";
+            stringArray[3] = "string";
+            stringArray[4] = "array";
+
+            foreach (string arrayEntry in stringArray)
+            {
+                listBox1.Items.Add(arrayEntry);
+            }
+
+        }
+
+        private void Btn2DArray_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+
+            int[,] arrayTimes;
+            int arrayRows = 5;
+            int arrayCols = 3;
+
+            arrayTimes = new int[arrayRows, arrayCols];
+
+            int number = 0;
+
+            for (int i = 0; i < arrayRows; i++)
+            {
+                number = number + 10;
+
+                for (int j = 0; j < arrayCols; j++)
+                {
+                    arrayTimes[i, j] = number;
+                    number = number * 10;
+                    listBox1.Items.Add("arrayPos=" + i.ToString() + "," + j.ToString() + " val = " + arrayTimes[i, j].ToString());
+                }
+                number = number / 1000;
+            }
+        }
+
+        private void BtnList_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+
+            List<string> students = new List<string>();
+
+            students.Add("Jenny");
+            students.Add("Peter");
+            students.Add("Mary Jane");
+
+            //let's use foreach loop here on list
+            foreach (string child in students)
+            {
+                listBox1.Items.Add(child);
+            }
+
+            students.Add("Azhar");
+            listBox1.Items.Add("New entry = " + students[3]);
+
+            students.Sort();
+            listBox1.Items.Add("==============");
+
+            //but here we use for loop on list
+            for (int i = 0; i < students.Count; i++)
+            {
+                listBox1.Items.Add(students[i]);
+            }
+
+            students.Remove("Peter");
+            students.RemoveRange(0, 2);
+            listBox1.Items.Add("===============");
+
+            foreach (string kid in students)
+            {
+                listBox1.Items.Add(kid);
+            }
+            MessageBox.Show(e.ToString());
+        }
+
+        private void BtnHashtable_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+
+            Hashtable students = new Hashtable();
+
+            //add data in hashtable -> python dictionary way --- will overwrite exixting value if key will already be in hashtable
+            students["Jenny"] = 87;
+            students["Peter"] = "No Score";
+            //add data in hashtable -> the other way, with method --- won't add dublicate value
+            students.Add("Marry Jane", 64);
+            students.Add("Azhar", 79);
+
+            foreach (DictionaryEntry child in students)
+            {
+                listBox1.Items.Add( child.Key + ": " + child.Value);
+            }
+
+            listBox1.Items.Add("---------------");
+            students.Remove("Peter");
+            foreach (DictionaryEntry kid in students)
+            {
+                listBox1.Items.Add(kid.Key + ": " + kid.Value);
+            }
+        }
+
+        //enumeration example
+        enum Subjects { English, IT, Science, Design, Math };
+        private void BtnEnumeration_Click(object sender, EventArgs e)
+        {
+            Subjects newSubject = Subjects.Science;
+            int numNumber = (int)newSubject;
+            MessageBox.Show(newSubject.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            for (int i = 0; i < 4; i++)
+                if (i == numNumber)
+                    MessageBox.Show("You are taking Science", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BtnStringExample_Click(object sender, EventArgs e)
+        {
+            /*
+            string stringVar = tbString.Text;
+            tbString.Text = stringVar.ToUpper();
+            MessageBox.Show(stringVar.Length.ToString());
+            tbString.Text = tbString.Text.Trim();
+            stringVar = tbString.Text;
+            MessageBox.Show(stringVar.Length.ToString());
+            */
+            string stringEmail = tbString.Text;
+            //int result = stringEmail.IndexOf("@",0,9);
+            int result = stringEmail.IndexOf("@");
+
+            if (result == -1)
+                MessageBox.Show("Invalid Email Address");
+            else
+                MessageBox.Show("@ found at position " + result.ToString());
+
+            /*
+            string example = "Some Text old text new text just text";
+            example = example.Insert( 5, "More ");
+            MessageBox.Show(example);
+            */
+
+            //remove and replace 
+            /*
+            string example = "Some Text old text new text just text";
+            MessageBox.Show(example);
+            string newexample = example.Remove(10, 9);
+            MessageBox.Show(newexample, "Remove");
+            newexample = example.Replace("text", "hicup");
+            MessageBox.Show(newexample, "Replace");
+            */
+
+            //string email = "john.snow@gmail.com";
+            int index = stringEmail.Length - 6;
+            string value = stringEmail.Substring(index);
+            if (value == ".co.uk")
+                MessageBox.Show(value + ", " + index.ToString());
+            else
+                MessageBox.Show("Invalid email address");
+        }
+
+        private void BtnPadding_Click(object sender, EventArgs e)
+        {
+            string padding = tbPadding.Text;
+            padding = padding.PadLeft(20,'-');
+            tbPadding.Text = padding;
+        }
+
+        private void BtnSplitJoin_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            string lineOfText = "item1, item2, item3, item4, item5";
+            string[] wordArray = lineOfText.Split(',');
+
+            listBox1.Items.Add(lineOfText);
+            listBox1.Items.Add("---------------");
+            foreach (string element in wordArray)
+            {
+                listBox1.Items.Add(element.Trim());
+            }
+            listBox1.Items.Add("---------------");
+            string newline = String.Join(" &", wordArray);
+            listBox1.Items.Add(newline);
+        }
+
+        private void TabTimes_MouseLeave(object sender, EventArgs e)
+        {
+            tabTimes.BackColor = Color.WhiteSmoke;
+        }
+
+        private void TabTimes_MouseEnter(object sender, EventArgs e)
+        {
+            tabTimes.BackColor = Color.GreenYellow;
+        }
+
+        private void TabTimes_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                MessageBox.Show("Left button clicked");
+            else if (e.Button == MouseButtons.Right)
+                MessageBox.Show("Right button clicked");
+        }
+
+        private void TbPadding_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.A)
+                MessageBox.Show(e.KeyValue.ToString());
+        }
+
+        private void TbLoopStart_Leave(object sender, EventArgs e)
+        {
+            if (tbLoopStart.Text == "")
+            {
+                MessageBox.Show("You can't leave this box blank");
+
+                tbLoopStart.Focus();
+            }
+        }
+
+        private void initialize_combobox()
+        {
+            string[] options = { "Cheque", "Credut Card", "PayPal" };
+            int index = 0;
+            foreach (string choice in options)
+            {
+                cbPaymentTypes.Items.Add(choice);
+            }
+        }
+
+        private void CbPaymentTypes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            populateOptions(cbPaymentTypes.SelectedIndex);
+        }
+
+        private void populateOptions(int index)
+        {
+            lbOptions.Items.Clear();
+
+            string[] cheque = { "Business Cheque", "eCheque", "Pension Cheque"};
+            string[] creditCard = {"American Express", "Discover", "Mastercard", "Visa"};
+            string[] payPal = { };
+
+            if (index == 0)
+            {
+                foreach (string option in cheque)
+                    lbOptions.Items.Add(option);
+            }
+            else if (index == 1)
+                foreach (string option in creditCard)
+                    lbOptions.Items.Add(option);
+        }
+
+        private void BtnBrowse_Click(object sender, EventArgs e)
+        {
+            string webPage = tbAddress.Text;
+            if (webPage.Length > 4 && webPage.Substring(webPage.Length - 4) == ".com")
+            {
+                webBrowser1.Navigate(webPage);
+            }
+            
+        }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            if (webBrowser1.CanGoBack)
+                webBrowser1.GoBack();
+        }
+
+        private void BtnForward_Click(object sender, EventArgs e)
+        {
+            if (webBrowser1.CanGoForward)
+                webBrowser1.GoForward();
+        }
+
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            webBrowser1.GoHome();
+        }
+
+        private void BtnStop_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Stop();
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Refresh();
+        }
+
+        private void BtnBack_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(btnBack, "Back One Page");
+            btnBack.Image = imageList1.Images[20];
+        }
+
+        private void BtnForward_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(btnForward, "Forward One Page");
+            btnForward.Image = imageList1.Images[21];
+        }
+
+        private void BtnHome_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(btnHome, "Go To Homepage");
+            btnHome.Image = imageList1.Images[22];
+        }
+
+        private void BtnStop_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(btnStop, "Stop Loading");
+            btnStop.Image = imageList1.Images[26];
+        }
+
+        private void BtnRefresh_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(btnRefresh, "Refresh Page");
+            btnRefresh.Image = imageList1.Images[25];
+        }
+
+        private void BtnBack_MouseLeave(object sender, EventArgs e)
+        {
+            btnBack.Image = imageList1.Images[5];
+        }
+
+        private void BtnForward_MouseLeave(object sender, EventArgs e)
+        {
+            btnForward.Image = imageList1.Images[6];
+        }
+
+        private void BtnHome_MouseLeave(object sender, EventArgs e)
+        {
+            btnHome.Image = imageList1.Images[23];
+        }
+
+        private void BtnStop_MouseLeave(object sender, EventArgs e)
+        {
+            btnStop.Image = imageList1.Images[9];
+        }
+
+        private void BtnRefresh_MouseLeave(object sender, EventArgs e)
+        {
+            btnRefresh.Image = imageList1.Images[24];
         }
     }
 }

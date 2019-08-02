@@ -18,3 +18,13 @@ C:\Users\reini\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practis
 C:\Users\reini\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.csproj.CoreCompileInputs.cache
 C:\Users\reini\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.exe
 C:\Users\reini\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.pdb
+C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\bin\Debug\WindowsForms_practise.exe.config
+C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\bin\Debug\WindowsForms_practise.exe
+C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\bin\Debug\WindowsForms_practise.pdb
+C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.csprojAssemblyReference.cache
+C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.Practise_app.resources
+C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.Properties.Resources.resources
+C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.csproj.GenerateResource.cache
+C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.csproj.CoreCompileInputs.cache
+C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.exe
+C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.pdb
