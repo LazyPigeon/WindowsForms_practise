@@ -1082,5 +1082,35 @@ namespace WindowsForms_practise
         {
             btnRefresh.Image = imageList1.Images[24];
         }
+
+        private void BtnHappyBday_Click(object sender, EventArgs e)
+        {
+            //HappyBirthday birthdayMessage = new HappyBirthday();
+            // or
+            //HappyBirthday birthdayMessage;
+            //birthdayMessage = new HappyBirthday();
+
+            //birthdayMessage.HaveParty = true;
+            //birthdayMessage.PresentCount = 5;
+
+            //birthdayMessage.myMessage = tbBirthday.Text;
+
+            //MessageBox.Show(birthdayMessage.myMessage, "Classes 1st example");
+
+            BirthdayParty partyOn = new BirthdayParty();
+
+            MessageBox.Show(partyOn.getMessage(tbBirthday.Text), "Classes Inheritance");
+            MessageBox.Show(partyOn.getPresents(8), "Classes Inheritance");
+            MessageBox.Show(partyOn.getParty(true), "Classes Inheritance");
+            MessageBox.Show(partyOn.getParty(true, "Ann"), "Classes Inheritance");
+
+        }
+
+        private void BtnStatic_Click(object sender, EventArgs e)
+        {
+            string answer;
+            answer = stats.addUp(9, 13).ToString();
+            MessageBox.Show(answer, "Static classes");
+        }
     }
 }

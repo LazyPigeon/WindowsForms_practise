@@ -149,6 +149,9 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnHappyBday = new System.Windows.Forms.Button();
+            this.tbBirthday = new System.Windows.Forms.TextBox();
+            this.btnStatic = new System.Windows.Forms.Button();
             this.tabControler1.SuspendLayout();
             this.PLAYGROUND.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -699,6 +702,9 @@
             // tabTimes
             // 
             this.tabTimes.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabTimes.Controls.Add(this.btnStatic);
+            this.tabTimes.Controls.Add(this.tbBirthday);
+            this.tabTimes.Controls.Add(this.btnHappyBday);
             this.tabTimes.Controls.Add(this.lbOptions);
             this.tabTimes.Controls.Add(this.cbPaymentTypes);
             this.tabTimes.Controls.Add(this.btnSplitJoin);
@@ -1511,6 +1517,33 @@
             this.btnRefresh.MouseLeave += new System.EventHandler(this.BtnRefresh_MouseLeave);
             this.btnRefresh.MouseHover += new System.EventHandler(this.BtnRefresh_MouseHover);
             // 
+            // btnHappyBday
+            // 
+            this.btnHappyBday.Location = new System.Drawing.Point(388, 611);
+            this.btnHappyBday.Name = "btnHappyBday";
+            this.btnHappyBday.Size = new System.Drawing.Size(183, 36);
+            this.btnHappyBday.TabIndex = 32;
+            this.btnHappyBday.Text = "Happy Birthday";
+            this.btnHappyBday.UseVisualStyleBackColor = true;
+            this.btnHappyBday.Click += new System.EventHandler(this.BtnHappyBday_Click);
+            // 
+            // tbBirthday
+            // 
+            this.tbBirthday.Location = new System.Drawing.Point(388, 661);
+            this.tbBirthday.Name = "tbBirthday";
+            this.tbBirthday.Size = new System.Drawing.Size(183, 26);
+            this.tbBirthday.TabIndex = 33;
+            // 
+            // btnStatic
+            // 
+            this.btnStatic.Location = new System.Drawing.Point(204, 611);
+            this.btnStatic.Name = "btnStatic";
+            this.btnStatic.Size = new System.Drawing.Size(164, 36);
+            this.btnStatic.TabIndex = 34;
+            this.btnStatic.Text = "Static class";
+            this.btnStatic.UseVisualStyleBackColor = true;
+            this.btnStatic.Click += new System.EventHandler(this.BtnStatic_Click);
+            // 
             // Practise_app
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1670,6 +1703,9 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnHappyBday;
+        private System.Windows.Forms.TextBox tbBirthday;
+        private System.Windows.Forms.Button btnStatic;
     }
 }
 
