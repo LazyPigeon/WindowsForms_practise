@@ -1,0 +1,4 @@
+Text file.
+Another line in text file.
+Some more text to make it longer.
+And just to finish it up, there is 4th line.

@@ -28,3 +28,5 @@ C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_pract
 C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.csproj.CoreCompileInputs.cache
 C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.exe
 C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.pdb
+C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\bin\Debug\Employees_log.ldf
+C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\bin\Debug\Employees.mdf

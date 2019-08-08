@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Practise_app));
-            this.tabControler1 = new System.Windows.Forms.TabControl();
+            this.tabController1 = new System.Windows.Forms.TabControl();
             this.PLAYGROUND = new System.Windows.Forms.TabPage();
             this.tbDebug = new System.Windows.Forms.TextBox();
             this.btnDebug = new System.Windows.Forms.Button();
@@ -76,6 +76,9 @@
             this.btnOne = new System.Windows.Forms.Button();
             this.txtDisplay = new System.Windows.Forms.TextBox();
             this.tabTimes = new System.Windows.Forms.TabPage();
+            this.btnStatic = new System.Windows.Forms.Button();
+            this.tbBirthday = new System.Windows.Forms.TextBox();
+            this.btnHappyBday = new System.Windows.Forms.Button();
             this.lbOptions = new System.Windows.Forms.ListBox();
             this.cbPaymentTypes = new System.Windows.Forms.ComboBox();
             this.btnSplitJoin = new System.Windows.Forms.Button();
@@ -120,6 +123,22 @@
             this.tbLoopStart = new System.Windows.Forms.TextBox();
             this.tBrowser = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.tabFile = new System.Windows.Forms.TabPage();
+            this.btnDeleteFile = new System.Windows.Forms.Button();
+            this.btnCopyFile = new System.Windows.Forms.Button();
+            this.btnReadLines = new System.Windows.Forms.Button();
+            this.btnSaveFile = new System.Windows.Forms.Button();
+            this.btnReadFile = new System.Windows.Forms.Button();
+            this.tbFile = new System.Windows.Forms.TextBox();
+            this.tabSQL = new System.Windows.Forms.TabPage();
+            this.txtDepartment = new System.Windows.Forms.TextBox();
+            this.txtJobTitle = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.lDepartment = new System.Windows.Forms.Label();
+            this.lJobTitle = new System.Windows.Forms.Label();
+            this.lSurname = new System.Windows.Forms.Label();
+            this.lFirstName = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.File = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -143,16 +162,17 @@
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btnBack = new System.Windows.Forms.Button();
-            this.btnForward = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnHappyBday = new System.Windows.Forms.Button();
-            this.tbBirthday = new System.Windows.Forms.TextBox();
-            this.btnStatic = new System.Windows.Forms.Button();
-            this.tabControler1.SuspendLayout();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.btnForward = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnFirstRecord = new System.Windows.Forms.Button();
+            this.btnPreviousRecord = new System.Windows.Forms.Button();
+            this.btnNextRecord = new System.Windows.Forms.Button();
+            this.btnLastRecord = new System.Windows.Forms.Button();
+            this.tabController1.SuspendLayout();
             this.PLAYGROUND.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Calculator.SuspendLayout();
@@ -160,22 +180,26 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tBrowser.SuspendLayout();
+            this.tabFile.SuspendLayout();
+            this.tabSQL.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControler1
+            // tabController1
             // 
-            this.tabControler1.Controls.Add(this.PLAYGROUND);
-            this.tabControler1.Controls.Add(this.EXCEL_TAB);
-            this.tabControler1.Controls.Add(this.Calculator);
-            this.tabControler1.Controls.Add(this.tabTimes);
-            this.tabControler1.Controls.Add(this.tBrowser);
-            this.tabControler1.Location = new System.Drawing.Point(0, 134);
-            this.tabControler1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabControler1.Name = "tabControler1";
-            this.tabControler1.SelectedIndex = 0;
-            this.tabControler1.Size = new System.Drawing.Size(984, 745);
-            this.tabControler1.TabIndex = 0;
+            this.tabController1.Controls.Add(this.PLAYGROUND);
+            this.tabController1.Controls.Add(this.EXCEL_TAB);
+            this.tabController1.Controls.Add(this.Calculator);
+            this.tabController1.Controls.Add(this.tabTimes);
+            this.tabController1.Controls.Add(this.tBrowser);
+            this.tabController1.Controls.Add(this.tabFile);
+            this.tabController1.Controls.Add(this.tabSQL);
+            this.tabController1.Location = new System.Drawing.Point(0, 134);
+            this.tabController1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabController1.Name = "tabController1";
+            this.tabController1.SelectedIndex = 0;
+            this.tabController1.Size = new System.Drawing.Size(984, 745);
+            this.tabController1.TabIndex = 0;
             // 
             // PLAYGROUND
             // 
@@ -748,6 +772,33 @@
             this.tabTimes.MouseEnter += new System.EventHandler(this.TabTimes_MouseEnter);
             this.tabTimes.MouseLeave += new System.EventHandler(this.TabTimes_MouseLeave);
             // 
+            // btnStatic
+            // 
+            this.btnStatic.Location = new System.Drawing.Point(204, 611);
+            this.btnStatic.Name = "btnStatic";
+            this.btnStatic.Size = new System.Drawing.Size(164, 36);
+            this.btnStatic.TabIndex = 34;
+            this.btnStatic.Text = "Static class";
+            this.btnStatic.UseVisualStyleBackColor = true;
+            this.btnStatic.Click += new System.EventHandler(this.BtnStatic_Click);
+            // 
+            // tbBirthday
+            // 
+            this.tbBirthday.Location = new System.Drawing.Point(388, 661);
+            this.tbBirthday.Name = "tbBirthday";
+            this.tbBirthday.Size = new System.Drawing.Size(183, 26);
+            this.tbBirthday.TabIndex = 33;
+            // 
+            // btnHappyBday
+            // 
+            this.btnHappyBday.Location = new System.Drawing.Point(388, 611);
+            this.btnHappyBday.Name = "btnHappyBday";
+            this.btnHappyBday.Size = new System.Drawing.Size(183, 36);
+            this.btnHappyBday.TabIndex = 32;
+            this.btnHappyBday.Text = "Happy Birthday";
+            this.btnHappyBday.UseVisualStyleBackColor = true;
+            this.btnHappyBday.Click += new System.EventHandler(this.BtnHappyBday_Click);
+            // 
             // lbOptions
             // 
             this.lbOptions.FormattingEnabled = true;
@@ -1215,6 +1266,166 @@
             this.webBrowser1.Size = new System.Drawing.Size(970, 706);
             this.webBrowser1.TabIndex = 0;
             // 
+            // tabFile
+            // 
+            this.tabFile.Controls.Add(this.btnDeleteFile);
+            this.tabFile.Controls.Add(this.btnCopyFile);
+            this.tabFile.Controls.Add(this.btnReadLines);
+            this.tabFile.Controls.Add(this.btnSaveFile);
+            this.tabFile.Controls.Add(this.btnReadFile);
+            this.tabFile.Controls.Add(this.tbFile);
+            this.tabFile.Location = new System.Drawing.Point(4, 29);
+            this.tabFile.Name = "tabFile";
+            this.tabFile.Padding = new System.Windows.Forms.Padding(3);
+            this.tabFile.Size = new System.Drawing.Size(976, 712);
+            this.tabFile.TabIndex = 5;
+            this.tabFile.Text = "File";
+            this.tabFile.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteFile
+            // 
+            this.btnDeleteFile.Location = new System.Drawing.Point(479, 81);
+            this.btnDeleteFile.Name = "btnDeleteFile";
+            this.btnDeleteFile.Size = new System.Drawing.Size(147, 30);
+            this.btnDeleteFile.TabIndex = 5;
+            this.btnDeleteFile.Text = "Delete File";
+            this.btnDeleteFile.UseVisualStyleBackColor = true;
+            this.btnDeleteFile.Click += new System.EventHandler(this.BtnDeleteFile_Click);
+            // 
+            // btnCopyFile
+            // 
+            this.btnCopyFile.Location = new System.Drawing.Point(357, 81);
+            this.btnCopyFile.Name = "btnCopyFile";
+            this.btnCopyFile.Size = new System.Drawing.Size(116, 30);
+            this.btnCopyFile.TabIndex = 4;
+            this.btnCopyFile.Text = "Copy File";
+            this.btnCopyFile.UseVisualStyleBackColor = true;
+            this.btnCopyFile.Click += new System.EventHandler(this.BtnCopyFile_Click);
+            // 
+            // btnReadLines
+            // 
+            this.btnReadLines.Location = new System.Drawing.Point(240, 81);
+            this.btnReadLines.Name = "btnReadLines";
+            this.btnReadLines.Size = new System.Drawing.Size(111, 30);
+            this.btnReadLines.TabIndex = 3;
+            this.btnReadLines.Text = "Read Lines";
+            this.btnReadLines.UseVisualStyleBackColor = true;
+            this.btnReadLines.Click += new System.EventHandler(this.BtnReadLines_Click);
+            // 
+            // btnSaveFile
+            // 
+            this.btnSaveFile.Location = new System.Drawing.Point(118, 81);
+            this.btnSaveFile.Name = "btnSaveFile";
+            this.btnSaveFile.Size = new System.Drawing.Size(110, 30);
+            this.btnSaveFile.TabIndex = 2;
+            this.btnSaveFile.Text = "Save File";
+            this.btnSaveFile.UseVisualStyleBackColor = true;
+            this.btnSaveFile.Click += new System.EventHandler(this.BtnSaveFile_Click);
+            // 
+            // btnReadFile
+            // 
+            this.btnReadFile.Location = new System.Drawing.Point(12, 81);
+            this.btnReadFile.Name = "btnReadFile";
+            this.btnReadFile.Size = new System.Drawing.Size(100, 30);
+            this.btnReadFile.TabIndex = 1;
+            this.btnReadFile.Text = "Read File";
+            this.btnReadFile.UseVisualStyleBackColor = true;
+            this.btnReadFile.Click += new System.EventHandler(this.BtnReadFile_Click);
+            // 
+            // tbFile
+            // 
+            this.tbFile.Location = new System.Drawing.Point(3, 117);
+            this.tbFile.Multiline = true;
+            this.tbFile.Name = "tbFile";
+            this.tbFile.Size = new System.Drawing.Size(970, 594);
+            this.tbFile.TabIndex = 0;
+            // 
+            // tabSQL
+            // 
+            this.tabSQL.Controls.Add(this.btnLastRecord);
+            this.tabSQL.Controls.Add(this.btnNextRecord);
+            this.tabSQL.Controls.Add(this.btnPreviousRecord);
+            this.tabSQL.Controls.Add(this.btnFirstRecord);
+            this.tabSQL.Controls.Add(this.txtDepartment);
+            this.tabSQL.Controls.Add(this.txtJobTitle);
+            this.tabSQL.Controls.Add(this.txtSurname);
+            this.tabSQL.Controls.Add(this.txtFirstName);
+            this.tabSQL.Controls.Add(this.lDepartment);
+            this.tabSQL.Controls.Add(this.lJobTitle);
+            this.tabSQL.Controls.Add(this.lSurname);
+            this.tabSQL.Controls.Add(this.lFirstName);
+            this.tabSQL.Location = new System.Drawing.Point(4, 29);
+            this.tabSQL.Name = "tabSQL";
+            this.tabSQL.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSQL.Size = new System.Drawing.Size(976, 712);
+            this.tabSQL.TabIndex = 6;
+            this.tabSQL.Text = "SQL";
+            this.tabSQL.UseVisualStyleBackColor = true;
+            // 
+            // txtDepartment
+            // 
+            this.txtDepartment.Location = new System.Drawing.Point(600, 100);
+            this.txtDepartment.Name = "txtDepartment";
+            this.txtDepartment.Size = new System.Drawing.Size(150, 26);
+            this.txtDepartment.TabIndex = 7;
+            // 
+            // txtJobTitle
+            // 
+            this.txtJobTitle.Location = new System.Drawing.Point(150, 100);
+            this.txtJobTitle.Name = "txtJobTitle";
+            this.txtJobTitle.Size = new System.Drawing.Size(150, 26);
+            this.txtJobTitle.TabIndex = 6;
+            // 
+            // txtSurname
+            // 
+            this.txtSurname.Location = new System.Drawing.Point(600, 50);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(150, 26);
+            this.txtSurname.TabIndex = 5;
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(150, 50);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(150, 26);
+            this.txtFirstName.TabIndex = 4;
+            // 
+            // lDepartment
+            // 
+            this.lDepartment.AutoSize = true;
+            this.lDepartment.Location = new System.Drawing.Point(450, 100);
+            this.lDepartment.Name = "lDepartment";
+            this.lDepartment.Size = new System.Drawing.Size(94, 20);
+            this.lDepartment.TabIndex = 3;
+            this.lDepartment.Text = "Department";
+            // 
+            // lJobTitle
+            // 
+            this.lJobTitle.AutoSize = true;
+            this.lJobTitle.Location = new System.Drawing.Point(50, 100);
+            this.lJobTitle.Name = "lJobTitle";
+            this.lJobTitle.Size = new System.Drawing.Size(68, 20);
+            this.lJobTitle.TabIndex = 2;
+            this.lJobTitle.Text = "Job Title";
+            // 
+            // lSurname
+            // 
+            this.lSurname.AutoSize = true;
+            this.lSurname.Location = new System.Drawing.Point(450, 50);
+            this.lSurname.Name = "lSurname";
+            this.lSurname.Size = new System.Drawing.Size(74, 20);
+            this.lSurname.TabIndex = 1;
+            this.lSurname.Text = "Surname";
+            // 
+            // lFirstName
+            // 
+            this.lFirstName.AutoSize = true;
+            this.lFirstName.Location = new System.Drawing.Point(50, 50);
+            this.lFirstName.Name = "lFirstName";
+            this.lFirstName.Size = new System.Drawing.Size(86, 20);
+            this.lFirstName.TabIndex = 0;
+            this.lFirstName.Text = "First Name";
+            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -1452,44 +1663,18 @@
             this.imageList1.Images.SetKeyName(58, "soiconsline-59.png");
             this.imageList1.Images.SetKeyName(59, "soiconsline-60.png");
             // 
-            // btnBack
+            // btnRefresh
             // 
-            this.btnBack.ImageIndex = 5;
-            this.btnBack.ImageList = this.imageList1;
-            this.btnBack.Location = new System.Drawing.Point(20, 72);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(50, 50);
-            this.btnBack.TabIndex = 4;
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
-            this.btnBack.MouseLeave += new System.EventHandler(this.BtnBack_MouseLeave);
-            this.btnBack.MouseHover += new System.EventHandler(this.BtnBack_MouseHover);
-            // 
-            // btnForward
-            // 
-            this.btnForward.ImageIndex = 6;
-            this.btnForward.ImageList = this.imageList1;
-            this.btnForward.Location = new System.Drawing.Point(76, 72);
-            this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(50, 50);
-            this.btnForward.TabIndex = 5;
-            this.btnForward.UseVisualStyleBackColor = true;
-            this.btnForward.Click += new System.EventHandler(this.BtnForward_Click);
-            this.btnForward.MouseLeave += new System.EventHandler(this.BtnForward_MouseLeave);
-            this.btnForward.MouseHover += new System.EventHandler(this.BtnForward_MouseHover);
-            // 
-            // btnHome
-            // 
-            this.btnHome.ImageIndex = 23;
-            this.btnHome.ImageList = this.imageList1;
-            this.btnHome.Location = new System.Drawing.Point(132, 72);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(50, 50);
-            this.btnHome.TabIndex = 5;
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.BtnHome_Click);
-            this.btnHome.MouseLeave += new System.EventHandler(this.BtnHome_MouseLeave);
-            this.btnHome.MouseHover += new System.EventHandler(this.BtnHome_MouseHover);
+            this.btnRefresh.ImageIndex = 24;
+            this.btnRefresh.ImageList = this.imageList1;
+            this.btnRefresh.Location = new System.Drawing.Point(244, 72);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(50, 50);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
+            this.btnRefresh.MouseLeave += new System.EventHandler(this.BtnRefresh_MouseLeave);
+            this.btnRefresh.MouseHover += new System.EventHandler(this.BtnRefresh_MouseHover);
             // 
             // btnStop
             // 
@@ -1504,45 +1689,84 @@
             this.btnStop.MouseLeave += new System.EventHandler(this.BtnStop_MouseLeave);
             this.btnStop.MouseHover += new System.EventHandler(this.BtnStop_MouseHover);
             // 
-            // btnRefresh
+            // btnHome
             // 
-            this.btnRefresh.ImageIndex = 24;
-            this.btnRefresh.ImageList = this.imageList1;
-            this.btnRefresh.Location = new System.Drawing.Point(244, 72);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(50, 50);
-            this.btnRefresh.TabIndex = 5;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
-            this.btnRefresh.MouseLeave += new System.EventHandler(this.BtnRefresh_MouseLeave);
-            this.btnRefresh.MouseHover += new System.EventHandler(this.BtnRefresh_MouseHover);
+            this.btnHome.ImageIndex = 23;
+            this.btnHome.ImageList = this.imageList1;
+            this.btnHome.Location = new System.Drawing.Point(132, 72);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(50, 50);
+            this.btnHome.TabIndex = 5;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.BtnHome_Click);
+            this.btnHome.MouseLeave += new System.EventHandler(this.BtnHome_MouseLeave);
+            this.btnHome.MouseHover += new System.EventHandler(this.BtnHome_MouseHover);
             // 
-            // btnHappyBday
+            // btnForward
             // 
-            this.btnHappyBday.Location = new System.Drawing.Point(388, 611);
-            this.btnHappyBday.Name = "btnHappyBday";
-            this.btnHappyBday.Size = new System.Drawing.Size(183, 36);
-            this.btnHappyBday.TabIndex = 32;
-            this.btnHappyBday.Text = "Happy Birthday";
-            this.btnHappyBday.UseVisualStyleBackColor = true;
-            this.btnHappyBday.Click += new System.EventHandler(this.BtnHappyBday_Click);
+            this.btnForward.ImageIndex = 6;
+            this.btnForward.ImageList = this.imageList1;
+            this.btnForward.Location = new System.Drawing.Point(76, 72);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(50, 50);
+            this.btnForward.TabIndex = 5;
+            this.btnForward.UseVisualStyleBackColor = true;
+            this.btnForward.Click += new System.EventHandler(this.BtnForward_Click);
+            this.btnForward.MouseLeave += new System.EventHandler(this.BtnForward_MouseLeave);
+            this.btnForward.MouseHover += new System.EventHandler(this.BtnForward_MouseHover);
             // 
-            // tbBirthday
+            // btnBack
             // 
-            this.tbBirthday.Location = new System.Drawing.Point(388, 661);
-            this.tbBirthday.Name = "tbBirthday";
-            this.tbBirthday.Size = new System.Drawing.Size(183, 26);
-            this.tbBirthday.TabIndex = 33;
+            this.btnBack.ImageIndex = 5;
+            this.btnBack.ImageList = this.imageList1;
+            this.btnBack.Location = new System.Drawing.Point(20, 72);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(50, 50);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
+            this.btnBack.MouseLeave += new System.EventHandler(this.BtnBack_MouseLeave);
+            this.btnBack.MouseHover += new System.EventHandler(this.BtnBack_MouseHover);
             // 
-            // btnStatic
+            // btnFirstRecord
             // 
-            this.btnStatic.Location = new System.Drawing.Point(204, 611);
-            this.btnStatic.Name = "btnStatic";
-            this.btnStatic.Size = new System.Drawing.Size(164, 36);
-            this.btnStatic.TabIndex = 34;
-            this.btnStatic.Text = "Static class";
-            this.btnStatic.UseVisualStyleBackColor = true;
-            this.btnStatic.Click += new System.EventHandler(this.BtnStatic_Click);
+            this.btnFirstRecord.Location = new System.Drawing.Point(50, 175);
+            this.btnFirstRecord.Name = "btnFirstRecord";
+            this.btnFirstRecord.Size = new System.Drawing.Size(150, 30);
+            this.btnFirstRecord.TabIndex = 8;
+            this.btnFirstRecord.Text = "First Record";
+            this.btnFirstRecord.UseVisualStyleBackColor = true;
+            this.btnFirstRecord.Click += new System.EventHandler(this.BtnFirstRecord_Click);
+            // 
+            // btnPreviousRecord
+            // 
+            this.btnPreviousRecord.Location = new System.Drawing.Point(225, 175);
+            this.btnPreviousRecord.Name = "btnPreviousRecord";
+            this.btnPreviousRecord.Size = new System.Drawing.Size(150, 30);
+            this.btnPreviousRecord.TabIndex = 9;
+            this.btnPreviousRecord.Text = "Previous Record";
+            this.btnPreviousRecord.UseVisualStyleBackColor = true;
+            this.btnPreviousRecord.Click += new System.EventHandler(this.BtnPreviousRecord_Click);
+            // 
+            // btnNextRecord
+            // 
+            this.btnNextRecord.Location = new System.Drawing.Point(400, 175);
+            this.btnNextRecord.Name = "btnNextRecord";
+            this.btnNextRecord.Size = new System.Drawing.Size(150, 30);
+            this.btnNextRecord.TabIndex = 10;
+            this.btnNextRecord.Text = "Next Record";
+            this.btnNextRecord.UseVisualStyleBackColor = true;
+            this.btnNextRecord.Click += new System.EventHandler(this.BtnNextRecord_Click);
+            // 
+            // btnLastRecord
+            // 
+            this.btnLastRecord.Location = new System.Drawing.Point(575, 175);
+            this.btnLastRecord.Name = "btnLastRecord";
+            this.btnLastRecord.Size = new System.Drawing.Size(150, 30);
+            this.btnLastRecord.TabIndex = 11;
+            this.btnLastRecord.Text = "Last Record";
+            this.btnLastRecord.UseVisualStyleBackColor = true;
+            this.btnLastRecord.Click += new System.EventHandler(this.BtnLastRecord_Click);
             // 
             // Practise_app
             // 
@@ -1556,13 +1780,13 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.tbAddress);
-            this.Controls.Add(this.tabControler1);
+            this.Controls.Add(this.tabController1);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Practise_app";
             this.Text = "Practise_app";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tabControler1.ResumeLayout(false);
+            this.tabController1.ResumeLayout(false);
             this.PLAYGROUND.ResumeLayout(false);
             this.PLAYGROUND.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1575,6 +1799,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tBrowser.ResumeLayout(false);
+            this.tabFile.ResumeLayout(false);
+            this.tabFile.PerformLayout();
+            this.tabSQL.ResumeLayout(false);
+            this.tabSQL.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -1584,7 +1812,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControler1;
+        private System.Windows.Forms.TabControl tabController1;
         private System.Windows.Forms.TabPage PLAYGROUND;
         private System.Windows.Forms.TabPage EXCEL_TAB;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -1706,6 +1934,26 @@
         private System.Windows.Forms.Button btnHappyBday;
         private System.Windows.Forms.TextBox tbBirthday;
         private System.Windows.Forms.Button btnStatic;
+        private System.Windows.Forms.TabPage tabFile;
+        private System.Windows.Forms.TabPage tabSQL;
+        private System.Windows.Forms.Button btnSaveFile;
+        private System.Windows.Forms.Button btnReadFile;
+        private System.Windows.Forms.TextBox tbFile;
+        private System.Windows.Forms.Button btnReadLines;
+        private System.Windows.Forms.Button btnDeleteFile;
+        private System.Windows.Forms.Button btnCopyFile;
+        private System.Windows.Forms.TextBox txtDepartment;
+        private System.Windows.Forms.TextBox txtJobTitle;
+        private System.Windows.Forms.TextBox txtSurname;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.Label lDepartment;
+        private System.Windows.Forms.Label lJobTitle;
+        private System.Windows.Forms.Label lSurname;
+        private System.Windows.Forms.Label lFirstName;
+        private System.Windows.Forms.Button btnLastRecord;
+        private System.Windows.Forms.Button btnNextRecord;
+        private System.Windows.Forms.Button btnPreviousRecord;
+        private System.Windows.Forms.Button btnFirstRecord;
     }
 }
 

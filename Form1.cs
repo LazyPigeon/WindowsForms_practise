@@ -13,19 +13,47 @@ namespace WindowsForms_practise
 {
     public partial class Practise_app : Form
     {
-
+        //Variables for calculator
         double value1 = 0;
         double answer = 0;
         string action = "";
+
+        //Variables for SQL databases
+        DataBaseConnection objConnect;
+        string conString;
+        DataSet ds;
+        DataRow dRow;
+        int MaxRows;
+        int inc = 0;
+
         public Practise_app()
         {
             InitializeComponent();
-            initialize_combobox();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //combobox exercise
+            initialize_combobox();
 
+            //SQL databases
+            try
+            {
+                objConnect = new DataBaseConnection();
+
+                conString = Properties.Settings.Default.EmployeesConnectionString;
+                objConnect.connection_string = conString; //give address of our SQL database to connect to
+                objConnect.Sql = Properties.Settings.Default.SQL; //set up our SQL querry
+
+                ds = objConnect.GetConnection; // receive data set from our class, that makes it from data it gets from SQL database
+
+                MaxRows = ds.Tables[0].Rows.Count;
+                NavigateRecords(); // fills fields in our forms tab
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void MnuQuit_Click(object sender, EventArgs e)
@@ -1111,6 +1139,183 @@ namespace WindowsForms_practise
             string answer;
             answer = stats.addUp(9, 13).ToString();
             MessageBox.Show(answer, "Static classes");
+        }
+
+        private void BtnReadFile_Click(object sender, EventArgs e)
+        {
+            string directory_path = "C:\\Users\\ReinisJ\\source\\repos\\WindowsForms_practise\\";
+            string file_name = "example1.txt";
+            string file_path = directory_path + file_name;
+
+            //Check if file exists
+            if (System.IO.File.Exists(file_path))
+            {
+                //Create StreamerReader obhect, that will contain our file
+                System.IO.StreamReader objReader;
+                objReader = new System.IO.StreamReader(file_path);
+
+                tbFile.Text = objReader.ReadToEnd(); //reads all content form StreamReaders object -> our file
+                tbFile.Text = tbFile.Text + "\r\n";
+                //read content from object/file line by line
+                //int i = 1;
+                //do
+                //{
+                //    tbFile.Text = tbFile.Text + i.ToString() + ". line: " + objReader.ReadLine() + "\r\n";
+                //    i++;
+                //} while (objReader.Peek() != -1); //Checks next carecter in object file, but don't consume it
+
+                objReader.Close(); //closes our file/StreamReader
+            }
+            else
+            {
+                MessageBox.Show("File Not found!\n" + file_path, "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnReadLines_Click(object sender, EventArgs e)
+        {
+            string directory_path = "C:\\Users\\ReinisJ\\source\\repos\\WindowsForms_practise\\";
+            string file_name = "example1.txt";
+            string file_path = directory_path + file_name;
+
+            tbFile.Text = ""; //Clear textBox if there was something in it
+
+
+            //Check if file exists
+            if (System.IO.File.Exists(file_path))
+            {
+                //Create StreamerReader object, that will contain our file
+                System.IO.StreamReader objReader;
+                objReader = new System.IO.StreamReader(file_path);
+
+                //tbFile.Text = objReader.ReadToEnd(); //reads all content form StreamReaders object -> our file
+
+                //read content from object/file line by line
+                int i = 1;
+                do
+                {
+                    tbFile.Text = tbFile.Text + i.ToString() + ". line: " + objReader.ReadLine() + "\r\n";
+                    i++;
+                } while (objReader.Peek() != -1); //Checks next carecter in object file, but don't consume it
+
+                objReader.Close(); //closes our file/StreamReader
+            }
+            else
+            {
+                MessageBox.Show("File Not found!\n" + file_path, "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnSaveFile_Click(object sender, EventArgs e)
+        {
+            string directory_path = "C:\\Users\\ReinisJ\\source\\repos\\WindowsForms_practise\\";
+            string file_name = "example2.txt";
+            string file_path = directory_path + file_name;
+
+            //no need to check if file exists, because we will create it if it doesn't
+            System.IO.StreamWriter ObjWriter = new System.IO.StreamWriter(file_path, true); //true means, that data will be appended to file; false -> data are over-written in file
+            ObjWriter.Write(tbFile.Text); //writes all file at once
+            ObjWriter.Close(); // always close file/object when you are done
+        }
+
+        private void BtnCopyFile_Click(object sender, EventArgs e)
+        {
+            string directory_path = "C:\\Users\\ReinisJ\\source\\repos\\WindowsForms_practise\\";
+            string fileToCopy_name = "example1.txt";
+            string fileToCopy_path = directory_path + fileToCopy_name;
+
+            string new_directory = "C:\\Users\\ReinisJ\\Documents\\CopiedFiles\\";
+
+            //check if directory where we want to copy file exists
+            if (System.IO.Directory.Exists(new_directory))
+            {
+                //check if file we want to copy exists
+                if (System.IO.File.Exists(fileToCopy_path))
+                {
+                    System.IO.File.Copy(fileToCopy_path, new_directory + fileToCopy_name, true); //copies file; ture will over-write existing file; false -> error if in destination that file existst
+                    //System.IO.File.Move(fileToCopy_path, new_directory + fileToCopy_name, true); //moves file; sane applies to move
+                }
+                else
+                {
+                    MessageBox.Show("File Not found!\n" + fileToCopy_path, "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Directory Not found!\n" + new_directory, "Destination Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnDeleteFile_Click(object sender, EventArgs e)
+        {
+            string directory_path = "C:\\Users\\ReinisJ\\Documents\\CopiedFiles\\";
+            string file_name = "example1.txt";
+            string file_path = directory_path + file_name;
+
+            //Check if file exists
+            if (System.IO.File.Exists(file_path))
+            {
+                System.IO.File.Delete(file_path);
+            }
+            else
+            {
+                MessageBox.Show("File Not found!\n" + file_path, "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void NavigateRecords()
+        {
+            dRow = ds.Tables[0].Rows[inc]; //selct row from data set
+
+            txtFirstName.Text = dRow.ItemArray.GetValue(1).ToString();
+            txtSurname.Text = dRow.ItemArray.GetValue(2).ToString();
+            txtJobTitle.Text = dRow.ItemArray.GetValue(3).ToString();
+            txtDepartment.Text = dRow.ItemArray.GetValue(4).ToString();
+
+        }
+
+        private void BtnFirstRecord_Click(object sender, EventArgs e)
+        {
+            if (inc > 0)
+            {
+                inc = 0;
+                NavigateRecords();
+            }
+        }
+
+        private void BtnPreviousRecord_Click(object sender, EventArgs e)
+        {
+            if (inc > 0)
+            {
+                inc--; // inc = inc - 1
+                NavigateRecords();
+            }
+            else
+            {
+                MessageBox.Show("Already at 1st record", "Out of bounds", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BtnNextRecord_Click(object sender, EventArgs e)
+        {
+            if (inc < MaxRows - 1)
+            {
+                inc++; // inc = inc + 1
+                NavigateRecords();
+            }
+            else
+            {
+                MessageBox.Show("Already at last record", "Out of bounds", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BtnLastRecord_Click(object sender, EventArgs e)
+        {
+            if (inc < MaxRows - 1)
+            {
+                inc = MaxRows - 1;
+                NavigateRecords();
+            }
         }
     }
 }
