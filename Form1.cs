@@ -26,6 +26,9 @@ namespace WindowsForms_practise
         int MaxRows;
         int inc = 0;
 
+        //Variables multiple forms
+        public static TextBox tb = new TextBox();
+
         public Practise_app()
         {
             InitializeComponent();
@@ -54,6 +57,9 @@ namespace WindowsForms_practise
             {
                 MessageBox.Show(err.Message);
             }
+
+            //Multiple forms exercise
+            tb = txtChangeCase;
         }
 
         private void MnuQuit_Click(object sender, EventArgs e)
@@ -989,7 +995,7 @@ namespace WindowsForms_practise
         private void initialize_combobox()
         {
             string[] options = { "Cheque", "Credut Card", "PayPal" };
-            int index = 0;
+            //int index = 0;
             foreach (string choice in options)
             {
                 cbPaymentTypes.Items.Add(choice);
@@ -1272,6 +1278,7 @@ namespace WindowsForms_practise
             txtJobTitle.Text = dRow.ItemArray.GetValue(3).ToString();
             txtDepartment.Text = dRow.ItemArray.GetValue(4).ToString();
 
+            UpdateInfo();
         }
 
         private void BtnFirstRecord_Click(object sender, EventArgs e)
@@ -1316,6 +1323,146 @@ namespace WindowsForms_practise
                 inc = MaxRows - 1;
                 NavigateRecords();
             }
+        }
+
+        private void BtnAddNew_Click_1(object sender, EventArgs e)
+        {
+            //clear text boxses so we can add a new entry
+            txtFirstName.Clear();
+            txtSurname.Clear();
+            txtJobTitle.Clear();
+            txtDepartment.Clear();
+
+            //enables Save and Cancel buttons, to add a record or undo change. Disable Add New button while in adding mode
+            btnAddNew.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            NavigateRecords();
+
+            btnAddNew.Enabled = true;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            //actual saving/adding of record in SQL database and dataset
+
+            //add row/entry to dataset
+            DataRow row = ds.Tables[0].NewRow();
+
+            row[1] = txtFirstName.Text;
+            row[2] = txtSurname.Text;
+            row[3] = txtJobTitle.Text;
+            row[4] = txtDepartment.Text;
+
+            ds.Tables[0].Rows.Add(row);
+
+            //update database
+            try
+            {
+                objConnect.UpdateDatabase(ds);
+                ds = objConnect.GetConnection; // receive data set from our class, that makes it from data it gets from SQL database
+
+                MaxRows++;
+                inc = MaxRows - 1;
+                UpdateInfo();
+
+                MessageBox.Show("Database Updated!", "Database", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            btnAddNew.Enabled = true;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+
+        }
+
+
+        private void UpdateInfo()
+        {
+            lInfo.Text = "Record " + (inc + 1).ToString() + " of " + MaxRows.ToString();
+        }
+
+        private void BtnUpdate_Click_1(object sender, EventArgs e)
+        {
+            //
+            DataRow row = ds.Tables[0].Rows[inc];
+            row[1] = txtFirstName.Text;
+            row[2] = txtSurname.Text;
+            row[3] = txtJobTitle.Text;
+            row[4] = txtDepartment.Text;
+
+            //update database
+            try
+            {
+                objConnect.UpdateDatabase(ds);
+
+                MessageBox.Show("Record Updated!", "Database", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnDelete_Click_1(object sender, EventArgs e)
+        {
+            ds.Tables[0].Rows[inc].Delete();
+
+            try
+            {
+                objConnect.UpdateDatabase(ds);
+
+                MaxRows--;
+                inc = inc - 1;
+                NavigateRecords();
+
+                MessageBox.Show("Record Deleted!", "Database", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        Form2 secondForm = new Form2();
+        
+        private void BtnFormTwo_Click(object sender, EventArgs e)
+        {
+            //create 2nd form, so it would be displayed when button clicked
+            //secondForm.Show(); //shows second form, but can still work with the form1 as well
+
+
+            secondForm.ShowDialog(); //shows second form, user unable to press any buttons in 1st form
+                                     //if (secondForm.DialogResult == DialogResult.OK)
+                                     //if (secondForm.ShowDialog() == DialogResult.OK)
+                                     //{
+                                     //MessageBox.Show("Button OK was pressed");
+                                     //}
+
+            
+           
+        }
+
+        private void BtnDateTime_Click(object sender, EventArgs e)
+        {
+            DateTime theDate;
+            //theDate = DateTime.Now;// date and time
+            theDate = DateTime.Today; // date - time is 00:00.00
+            DateTime firstDate = new DateTime(2013, 01, 14);
+            TimeSpan dateDiff;
+            dateDiff = theDate.Subtract(firstDate);
+            //MessageBox.Show(theDate.ToString("D"), "Date & Time"); // "d" in ToSring("d") allows to show only date without time -> dd/mm/yyyy; "D" represents dd month yyyy
+            MessageBox.Show("dateDiff: " + dateDiff.ToString());
         }
     }
 }

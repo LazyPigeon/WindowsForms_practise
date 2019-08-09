@@ -30,3 +30,4 @@ C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_pract
 C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.pdb
 C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\bin\Debug\Employees_log.ldf
 C:\Users\ReinisJ\Source\Repos\WindowsForms_practise\bin\Debug\Employees.mdf
+C:\Users\ReinisJ\source\repos\WindowsForms_practise\obj\Debug\WindowsForms_practise.Form2.resources

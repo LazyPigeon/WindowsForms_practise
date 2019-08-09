@@ -51,5 +51,12 @@ namespace WindowsForms_practise
 
             return data_set;
         }
+
+        public void UpdateDatabase(System.Data.DataSet ds)
+        {
+            //create command builder for data adapter to update underlying database
+            System.Data.SqlClient.SqlCommandBuilder cb = new System.Data.SqlClient.SqlCommandBuilder(da_1);
+            cb.DataAdapter.Update(ds.Tables[0]);
+        }
     }
 }
